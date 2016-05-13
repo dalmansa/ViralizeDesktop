@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace ViralizeDesktop
 {
+
+
+   
+
     public partial class Propuestas : Form
     {
         public Propuestas()
