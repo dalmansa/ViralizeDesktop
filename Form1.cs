@@ -16,5 +16,11 @@ namespace ViralizeDesktop
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Propuestas prop = new Propuestas();
+            prop.Show();
+        }
     }
 }

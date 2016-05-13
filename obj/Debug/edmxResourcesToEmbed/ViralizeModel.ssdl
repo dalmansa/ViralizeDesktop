@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VIRALIZEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LOGRO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="valor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOGRO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logro_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NIVEL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NIVEL_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nivel_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PLATAFORMA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PLATAFORMA_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plataforma_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROPUESTA_RETO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="fechaPublicacion" Type="datetime" Nullable="false" />
+    <Property Name="urlVideo" Type="text" Nullable="false" />
+    <Property Name="usuarioID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="fechaPublicacion" Type="datetime" Nullable="false" />
+    <Property Name="fechaCaducidad" Type="datetime" Nullable="false" />
+    <Property Name="urlVideo" Type="text" Nullable="false" />
+    <Property Name="activo" Type="tinyint" Nullable="false" />
+    <Property Name="usuarioID" Type="int" Nullable="false" />
+    <Property Name="plataformaID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reto_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHARE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="fechaPublicacion" Type="datetime" Nullable="false" />
+    <Property Name="urlVideo" Type="text" Nullable="false" />
+    <Property Name="rating" Type="int" Nullable="false" />
+    <Property Name="usuarioID" Type="int" Nullable="false" />
+    <Property Name="retoID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHARE_BLOQUEADA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shareID" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHARE_BLOQUEADA_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="share_bloqueada_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="apellidos" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="text" Nullable="false" />
+    <Property Name="puntuacion" Type="int" />
+    <Property Name="nivelID" Type="int" />
+    <Property Name="administrador" Type="tinyint" Nullable="false" />
+    <Property Name="superusuario" Type="tinyint" Nullable="false" />
+    <Property Name="plataformaID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO_LOGRO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuarioID" Type="int" Nullable="false" />
+    <Property Name="logroID" Type="int" Nullable="false" />
+    <Property Name="fechaObtencion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO_LOGRO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_logro_id" Type="int" Nullable="false" />
+    <Property Name="op" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_LOGRO_USUARIO">
+    <End Role="LOGRO" Type="Self.LOGRO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USUARIO_LOGRO" Type="Self.USUARIO_LOGRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGRO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USUARIO_LOGRO">
+        <PropertyRef Name="logroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPUESTA_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="PROPUESTA_RETO" Type="Self.PROPUESTA_RETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PROPUESTA_RETO">
+        <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETO_PLATAFORMA">
+    <End Role="PLATAFORMA" Type="Self.PLATAFORMA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RETO" Type="Self.RETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLATAFORMA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RETO">
+        <PropertyRef Name="plataformaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETO_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="RETO" Type="Self.RETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RETO">
+        <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHARE_RETO">
+    <End Role="RETO" Type="Self.RETO" Multiplicity="1" />
+    <End Role="SHARE" Type="Self.SHARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SHARE">
+        <PropertyRef Name="retoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHARE_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SHARE" Type="Self.SHARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SHARE">
+        <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_LOGRO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USUARIO_LOGRO" Type="Self.USUARIO_LOGRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USUARIO_LOGRO">
+        <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_NIVEL">
+    <End Role="NIVEL" Type="Self.NIVEL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIVEL">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="nivelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_PLATAFORMA">
+    <End Role="PLATAFORMA" Type="Self.PLATAFORMA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLATAFORMA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="plataformaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spLogroLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spLogroLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spLogroLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spNivelLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spNivelLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spNivelLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spPlataformaLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spPlataformaLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spPlataformaLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spRetoLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spRetoLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spRetoLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spShareBloqueadaLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spShareBloqueadaLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spShareBloqueadaLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogroLogDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogroLogIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogroLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUsuarioLogUpd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="first" Type="int" Mode="In" />
+    <Parameter Name="last" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="VIRALIZEModelStoreContainer">
+    <EntitySet Name="LOGRO" EntityType="Self.LOGRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGRO_LOG" EntityType="Self.LOGRO_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NIVEL" EntityType="Self.NIVEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NIVEL_LOG" EntityType="Self.NIVEL_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLATAFORMA" EntityType="Self.PLATAFORMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLATAFORMA_LOG" EntityType="Self.PLATAFORMA_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROPUESTA_RETO" EntityType="Self.PROPUESTA_RETO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RETO" EntityType="Self.RETO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RETO_LOG" EntityType="Self.RETO_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHARE" EntityType="Self.SHARE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHARE_BLOQUEADA" EntityType="Self.SHARE_BLOQUEADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHARE_BLOQUEADA_LOG" EntityType="Self.SHARE_BLOQUEADA_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO_LOG" EntityType="Self.USUARIO_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO_LOGRO" EntityType="Self.USUARIO_LOGRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO_LOGRO_LOG" EntityType="Self.USUARIO_LOGRO_LOG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_LOGRO_USUARIO" Association="Self.FK_LOGRO_USUARIO">
+      <End Role="LOGRO" EntitySet="LOGRO" />
+      <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPUESTA_USUARIO" Association="Self.FK_PROPUESTA_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PROPUESTA_RETO" EntitySet="PROPUESTA_RETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETO_PLATAFORMA" Association="Self.FK_RETO_PLATAFORMA">
+      <End Role="PLATAFORMA" EntitySet="PLATAFORMA" />
+      <End Role="RETO" EntitySet="RETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETO_USUARIO" Association="Self.FK_RETO_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="RETO" EntitySet="RETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHARE_RETO" Association="Self.FK_SHARE_RETO">
+      <End Role="RETO" EntitySet="RETO" />
+      <End Role="SHARE" EntitySet="SHARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHARE_USUARIO" Association="Self.FK_SHARE_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="SHARE" EntitySet="SHARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_LOGRO" Association="Self.FK_USUARIO_LOGRO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_NIVEL" Association="Self.FK_USUARIO_NIVEL">
+      <End Role="NIVEL" EntitySet="NIVEL" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_PLATAFORMA" Association="Self.FK_USUARIO_PLATAFORMA">
+      <End Role="PLATAFORMA" EntitySet="PLATAFORMA" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

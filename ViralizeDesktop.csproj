@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +63,148 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LOGRO.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOGRO_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NIVEL.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NIVEL_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLATAFORMA.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLATAFORMA_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propuestas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Propuestas.Designer.cs">
+      <DependentUpon>Propuestas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PROPUESTA_RETO.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RETO.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RETO_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SHARE.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SHARE_BLOQUEADA.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SHARE_BLOQUEADA_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spLogroLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spLogroLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spLogroLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spNivelLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spNivelLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spNivelLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spPlataformaLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spPlataformaLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spPlataformaLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spRetoLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spRetoLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spRetoLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spShareBloqueadaLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spShareBloqueadaLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spShareBloqueadaLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogroLogDel_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogroLogIns_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogroLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUsuarioLogUpd_Result.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO_LOGRO.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO_LOGRO_LOG.cs">
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VIRALIZEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VIRALIZEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViralizeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViralizeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViralizeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViralizeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViralizeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViralizeModel.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +213,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Propuestas.resx">
+      <DependentUpon>Propuestas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,9 +228,63 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="ViralizeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ViralizeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VIRALIZEDataSet.xsc">
+      <DependentUpon>VIRALIZEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VIRALIZEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VIRALIZEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VIRALIZEDataSet.xss">
+      <DependentUpon>VIRALIZEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ViralizeModel.edmx.diagram">
+      <DependentUpon>ViralizeModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorBackground.jpg" />
+    <None Include="Resources\ve.gif" />
+    <Content Include="ViralizeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ViralizeModel.edmx</DependentUpon>
+      <LastGenOutput>ViralizeModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ViralizeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ViralizeModel.edmx</DependentUpon>
+      <LastGenOutput>ViralizeModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VIRALIZEModelStoreContainer" CdmEntityContainer="VIRALIZEEntities">
+    <EntitySetMapping Name="LOGROes">
+      <EntityTypeMapping TypeName="VIRALIZEModel.LOGRO">
+        <MappingFragment StoreEntitySet="LOGRO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGRO_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.LOGRO_LOG">
+        <MappingFragment StoreEntitySet="LOGRO_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="logro_id" ColumnName="logro_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIVELs">
+      <EntityTypeMapping TypeName="VIRALIZEModel.NIVEL">
+        <MappingFragment StoreEntitySet="NIVEL">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIVEL_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.NIVEL_LOG">
+        <MappingFragment StoreEntitySet="NIVEL_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nivel_id" ColumnName="nivel_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLATAFORMAs">
+      <EntityTypeMapping TypeName="VIRALIZEModel.PLATAFORMA">
+        <MappingFragment StoreEntitySet="PLATAFORMA">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLATAFORMA_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.PLATAFORMA_LOG">
+        <MappingFragment StoreEntitySet="PLATAFORMA_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="plataforma_id" ColumnName="plataforma_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPUESTA_RETO">
+      <EntityTypeMapping TypeName="VIRALIZEModel.PROPUESTA_RETO">
+        <MappingFragment StoreEntitySet="PROPUESTA_RETO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETOes">
+      <EntityTypeMapping TypeName="VIRALIZEModel.RETO">
+        <MappingFragment StoreEntitySet="RETO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETO_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.RETO_LOG">
+        <MappingFragment StoreEntitySet="RETO_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="reto_id" ColumnName="reto_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHAREs">
+      <EntityTypeMapping TypeName="VIRALIZEModel.SHARE">
+        <MappingFragment StoreEntitySet="SHARE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="retoID" ColumnName="retoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHARE_BLOQUEADA">
+      <EntityTypeMapping TypeName="VIRALIZEModel.SHARE_BLOQUEADA">
+        <MappingFragment StoreEntitySet="SHARE_BLOQUEADA">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shareID" ColumnName="shareID" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHARE_BLOQUEADA_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.SHARE_BLOQUEADA_LOG">
+        <MappingFragment StoreEntitySet="SHARE_BLOQUEADA_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="share_bloqueada_id" ColumnName="share_bloqueada_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOs">
+      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+          <ScalarProperty Name="administrador" ColumnName="administrador" />
+          <ScalarProperty Name="superusuario" ColumnName="superusuario" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO_LOG">
+        <MappingFragment StoreEntitySet="USUARIO_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO_LOGRO">
+      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO_LOGRO">
+        <MappingFragment StoreEntitySet="USUARIO_LOGRO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="logroID" ColumnName="logroID" />
+          <ScalarProperty Name="fechaObtencion" ColumnName="fechaObtencion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO_LOGRO_LOG">
+      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO_LOGRO_LOG">
+        <MappingFragment StoreEntitySet="USUARIO_LOGRO_LOG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuario_logro_id" ColumnName="usuario_logro_id" />
+          <ScalarProperty Name="op" ColumnName="op" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spLogroLogDel" FunctionName="VIRALIZEModel.Store.spLogroLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spLogroLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spLogroLogIns" FunctionName="VIRALIZEModel.Store.spLogroLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spLogroLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spLogroLogUpd" FunctionName="VIRALIZEModel.Store.spLogroLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spLogroLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spNivelLogDel" FunctionName="VIRALIZEModel.Store.spNivelLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spNivelLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spNivelLogIns" FunctionName="VIRALIZEModel.Store.spNivelLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spNivelLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spNivelLogUpd" FunctionName="VIRALIZEModel.Store.spNivelLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spNivelLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spPlataformaLogDel" FunctionName="VIRALIZEModel.Store.spPlataformaLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spPlataformaLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spPlataformaLogIns" FunctionName="VIRALIZEModel.Store.spPlataformaLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spPlataformaLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spPlataformaLogUpd" FunctionName="VIRALIZEModel.Store.spPlataformaLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spPlataformaLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRetoLogDel" FunctionName="VIRALIZEModel.Store.spRetoLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spRetoLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRetoLogIns" FunctionName="VIRALIZEModel.Store.spRetoLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spRetoLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRetoLogUpd" FunctionName="VIRALIZEModel.Store.spRetoLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spRetoLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="urlVideo" ColumnName="urlVideo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spShareBloqueadaLogDel" FunctionName="VIRALIZEModel.Store.spShareBloqueadaLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spShareBloqueadaLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shareID" ColumnName="shareID" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spShareBloqueadaLogIns" FunctionName="VIRALIZEModel.Store.spShareBloqueadaLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spShareBloqueadaLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shareID" ColumnName="shareID" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spShareBloqueadaLogUpd" FunctionName="VIRALIZEModel.Store.spShareBloqueadaLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spShareBloqueadaLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shareID" ColumnName="shareID" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogDel" FunctionName="VIRALIZEModel.Store.spUsuarioLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogIns" FunctionName="VIRALIZEModel.Store.spUsuarioLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogroLogDel" FunctionName="VIRALIZEModel.Store.spUsuarioLogroLogDel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogroLogDel_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="logroID" ColumnName="logroID" />
+          <ScalarProperty Name="fechaObtencion" ColumnName="fechaObtencion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogroLogIns" FunctionName="VIRALIZEModel.Store.spUsuarioLogroLogIns">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogroLogIns_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="logroID" ColumnName="logroID" />
+          <ScalarProperty Name="fechaObtencion" ColumnName="fechaObtencion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogroLogUpd" FunctionName="VIRALIZEModel.Store.spUsuarioLogroLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogroLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="logroID" ColumnName="logroID" />
+          <ScalarProperty Name="fechaObtencion" ColumnName="fechaObtencion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUsuarioLogUpd" FunctionName="VIRALIZEModel.Store.spUsuarioLogUpd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VIRALIZEModel.spUsuarioLogUpd_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
