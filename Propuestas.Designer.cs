@@ -43,7 +43,8 @@
             this.pROPUESTA_RETOTableAdapter = new ViralizeDesktop.VIRALIZEDataSetTableAdapters.PROPUESTA_RETOTableAdapter();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.aProp = new System.Windows.Forms.Button();
+            this.rProp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -89,36 +90,42 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tituloDataGridViewTextBoxColumn
             // 
             this.tituloDataGridViewTextBoxColumn.DataPropertyName = "titulo";
             this.tituloDataGridViewTextBoxColumn.HeaderText = "titulo";
             this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaPublicacionDataGridViewTextBoxColumn
             // 
             this.fechaPublicacionDataGridViewTextBoxColumn.DataPropertyName = "fechaPublicacion";
             this.fechaPublicacionDataGridViewTextBoxColumn.HeaderText = "fechaPublicacion";
             this.fechaPublicacionDataGridViewTextBoxColumn.Name = "fechaPublicacionDataGridViewTextBoxColumn";
+            this.fechaPublicacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // urlVideoDataGridViewTextBoxColumn
             // 
             this.urlVideoDataGridViewTextBoxColumn.DataPropertyName = "urlVideo";
             this.urlVideoDataGridViewTextBoxColumn.HeaderText = "urlVideo";
             this.urlVideoDataGridViewTextBoxColumn.Name = "urlVideoDataGridViewTextBoxColumn";
+            this.urlVideoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usuarioIDDataGridViewTextBoxColumn
             // 
             this.usuarioIDDataGridViewTextBoxColumn.DataPropertyName = "usuarioID";
             this.usuarioIDDataGridViewTextBoxColumn.HeaderText = "usuarioID";
             this.usuarioIDDataGridViewTextBoxColumn.Name = "usuarioIDDataGridViewTextBoxColumn";
+            this.usuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pROPUESTARETOBindingSource
             // 
@@ -154,14 +161,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // aProp
             // 
-            this.button2.Location = new System.Drawing.Point(420, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.aProp.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.aProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aProp.Location = new System.Drawing.Point(293, 325);
+            this.aProp.Name = "aProp";
+            this.aProp.Size = new System.Drawing.Size(120, 53);
+            this.aProp.TabIndex = 7;
+            this.aProp.Text = "Aceptar propuesta";
+            this.aProp.UseVisualStyleBackColor = false;
+            this.aProp.Click += new System.EventHandler(this.aProp_Click);
+            // 
+            // rProp
+            // 
+            this.rProp.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.rProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rProp.Location = new System.Drawing.Point(117, 325);
+            this.rProp.Name = "rProp";
+            this.rProp.Size = new System.Drawing.Size(120, 53);
+            this.rProp.TabIndex = 8;
+            this.rProp.Text = "Rechazar propuesta";
+            this.rProp.UseVisualStyleBackColor = false;
+            this.rProp.Click += new System.EventHandler(this.rProp_Click);
             // 
             // Propuestas
             // 
@@ -170,7 +192,8 @@
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(909, 545);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.rProp);
+            this.Controls.Add(this.aProp);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.dataGridView1);
@@ -202,6 +225,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioIDDataGridViewTextBoxColumn;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button aProp;
+        private System.Windows.Forms.Button rProp;
     }
 }

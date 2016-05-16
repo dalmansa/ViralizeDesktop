@@ -121,7 +121,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="apellidos" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="text" />
     <Property Name="password" Type="text" Nullable="false" />
     <Property Name="puntuacion" Type="int" />
     <Property Name="nivelID" Type="int" />

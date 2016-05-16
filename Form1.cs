@@ -14,6 +14,8 @@ namespace ViralizeDesktop
 
     public partial class Form1 : Form
     {
+        String user;
+        String pass;
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         public Form1()
         {
@@ -23,8 +25,26 @@ namespace ViralizeDesktop
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+            //string query = (from c in dataContext.USUARIOs
+            //                where c.username == txtUser.Text && c.password == txtPass.Text
+            //                select c.username).FirstOrDefault();
+            //if (query != null)
+            //{
+            //    Propuestas prop = new Propuestas();
+            //    prop.Show();
+            //}
+            //else
+            //    MessageBox.Show("Login incorrect");
+
             Propuestas prop = new Propuestas();
-            prop.Show();
+                prop.Show();
         }
+
+
+
+
+
     }
-}
+    }

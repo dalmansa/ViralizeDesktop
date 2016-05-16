@@ -16,7 +16,15 @@ namespace ViralizeDesktop
 
     public partial class Propuestas : Form
     {
+        public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         string getVideoUrl = "";
+        int id;
+
+        String titulo;
+        String descripcion;
+        DateTime fechaPublicacion;
+        String urlVideo;
+        int usuarioId;
 
         public Propuestas()
         {
@@ -35,7 +43,7 @@ namespace ViralizeDesktop
 
         private void CargarVideo(String videoUrl)
         {
-            axWindowsMediaPlayer1.URL = @""+getVideoUrl;
+            axWindowsMediaPlayer1.URL = @"http://"+getVideoUrl;
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -63,9 +71,66 @@ namespace ViralizeDesktop
             if (selectedRowCount > 0)
             {
                 getVideoUrl = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 CargarVideo(getVideoUrl);
-                //MessageBox.Show(getVideoUrl);
+                MessageBox.Show(getVideoUrl);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aProp_Click(object sender, EventArgs e)
+        {
+            var query =
+                from al in dataContext.PROPUESTA_RETO
+                where al.id == id
+                select al;
+
+            foreach (var al in query)
+            {
+                titulo = al.titulo;
+                descripcion = al.descripcion;
+                fechaPublicacion = al.fechaPublicacion;
+                urlVideo = al.urlVideo;
+                usuarioId = al.usuarioID;
+
+            }
+
+
+            RETO reto = new RETO();
+
+            reto.titulo = titulo;
+            reto.descripcion = descripcion;
+            reto.fechaPublicacion = fechaPublicacion;
+            reto.urlVideo = urlVideo;
+            reto.usuarioID = usuarioId;
+            reto.activo = 1;
+            reto.plataformaID = 1;
+            reto.fechaCaducidad = DateTime.Now;
+
+            dataContext.RETOes.Add(reto);
+            dataContext.SaveChanges();
+            MessageBox.Show("Accepted");
+            
+        }
+
+        private void rProp_Click(object sender, EventArgs e)
+        {
+            var query = from al in dataContext.PROPUESTA_RETO
+                        where al.id == id
+                        select al;
+            foreach (var al in query)
+            {
+                dataContext.PROPUESTA_RETO.Remove(al);
+                
+            }
+            dataContext.SaveChanges();
+            
+
+            MessageBox.Show("Denied");
         }
     }
 }

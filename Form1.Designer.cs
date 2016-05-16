@@ -31,8 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,19 +73,19 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtUser.Location = new System.Drawing.Point(187, 81);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.TabIndex = 3;
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(187, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtPass.Location = new System.Drawing.Point(187, 116);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -106,8 +106,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(399, 237);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -124,8 +124,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
