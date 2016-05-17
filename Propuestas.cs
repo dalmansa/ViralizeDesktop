@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/* Necesario para hash SHA512 */
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ViralizeDesktop
 {
@@ -25,6 +28,7 @@ namespace ViralizeDesktop
         DateTime fechaPublicacion;
         String urlVideo;
         int usuarioId;
+        string hashkey = "ViralizeHashKey";
 
         public Propuestas()
         {
@@ -154,7 +158,9 @@ namespace ViralizeDesktop
             user.nombre = txtNombre.Text;
             user.apellidos = txtApellidos.Text;
             user.username = txtUsuario.Text;
-            user.password = txtPassword.Text;
+
+            string hash = CreateSHAHash(txtPassword.Text, hashkey);
+            user.password = hash;
 
             if (checkAdmin.Checked)
             {
@@ -178,8 +184,18 @@ namespace ViralizeDesktop
             dataContext.USUARIOs.Add(user);
             dataContext.SaveChanges();
             MessageBox.Show("Usuario creado");
+            MessageBox.Show(hash);
 
 
+        }
+
+        public static string CreateSHAHash(string Text, string Salt)
+        {
+            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
+            Byte[] HashAsByte = System.Text.Encoding.UTF8.GetBytes(string.Concat(Text, Salt));
+            Byte[] EncryptedBytes = HashTool.ComputeHash(HashAsByte);
+            HashTool.Clear();
+            return Convert.ToBase64String(EncryptedBytes);
         }
     } 
 }
