@@ -27,19 +27,16 @@ namespace ViralizeDesktop
         {
 
 
-            //string query = (from c in dataContext.USUARIOs
-            //                where c.username == txtUser.Text && c.password == txtPass.Text
-            //                select c.username).FirstOrDefault();
-            //if (query != null)
-            //{
-            //    Propuestas prop = new Propuestas();
-            //    prop.Show();
-            //}
-            //else
-            //    MessageBox.Show("Login incorrect");
-
-            Propuestas prop = new Propuestas();
+            string query = (from c in dataContext.USUARIOs
+                            where c.username == txtUser.Text && c.password == txtPass.Text && c.administrador == 1
+                            select c.username).FirstOrDefault();
+            if (query != null)
+            {
+                Propuestas prop = new Propuestas();
                 prop.Show();
+            }
+            else
+                MessageBox.Show("Login incorrect");
         }
 
 
