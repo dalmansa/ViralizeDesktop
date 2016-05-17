@@ -12,7 +12,7 @@ namespace ViralizeDesktop
 {
 
 
-   
+
 
     public partial class Propuestas : Form
     {
@@ -39,11 +39,12 @@ namespace ViralizeDesktop
             axWindowsMediaPlayer1.URL = @"";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
+            panelRegistro.Hide();
         }
 
         private void CargarVideo(String videoUrl)
         {
-            axWindowsMediaPlayer1.URL = @"http://"+getVideoUrl;
+            axWindowsMediaPlayer1.URL = @"http://" + getVideoUrl;
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace ViralizeDesktop
 
         }
 
-        
+
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -109,12 +110,13 @@ namespace ViralizeDesktop
             reto.usuarioID = usuarioId;
             reto.activo = 1;
             reto.plataformaID = 1;
-            reto.fechaCaducidad = DateTime.Now;
+
+            reto.fechaCaducidad = DateTime.Now.AddDays(31);
 
             dataContext.RETOes.Add(reto);
             dataContext.SaveChanges();
             MessageBox.Show("Accepted");
-            
+
         }
 
         private void rProp_Click(object sender, EventArgs e)
@@ -125,12 +127,59 @@ namespace ViralizeDesktop
             foreach (var al in query)
             {
                 dataContext.PROPUESTA_RETO.Remove(al);
-                
+
             }
             dataContext.SaveChanges();
-            
+
 
             MessageBox.Show("Denied");
         }
-    }
+
+        private void propuestasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelRegistro.Hide();
+            panelPropuestas.Show();
+        }
+
+        private void registroUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelPropuestas.Hide();
+            panelRegistro.Show();
+        }
+
+        private void crearUsuarioButton_Click(object sender, EventArgs e)
+        {
+            USUARIO user = new USUARIO();
+
+            user.nombre = txtNombre.Text;
+            user.apellidos = txtApellidos.Text;
+            user.username = txtUsuario.Text;
+            user.password = txtPassword.Text;
+
+            if (checkAdmin.Checked)
+            {
+                user.administrador = 1;
+            }
+            else
+            {
+                user.administrador = 0;
+            }
+
+            if (checkSuper.Checked)
+            {
+                user.superusuario = 1;
+            }
+            else {
+                user.superusuario = 0;
+            }
+
+            user.plataformaID = 1;
+
+            dataContext.USUARIOs.Add(user);
+            dataContext.SaveChanges();
+            MessageBox.Show("Usuario creado");
+
+
+        }
+    } 
 }

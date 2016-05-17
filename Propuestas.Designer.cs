@@ -42,13 +42,34 @@
             this.vIRALIZEDataSet = new ViralizeDesktop.VIRALIZEDataSet();
             this.pROPUESTA_RETOTableAdapter = new ViralizeDesktop.VIRALIZEDataSetTableAdapters.PROPUESTA_RETOTableAdapter();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.button1 = new System.Windows.Forms.Button();
             this.aProp = new System.Windows.Forms.Button();
             this.rProp = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.propuestasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelPropuestas = new System.Windows.Forms.Panel();
+            this.panelRegistro = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.checkSuper = new System.Windows.Forms.CheckBox();
+            this.crearUsuarioButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.panelPropuestas.SuspendLayout();
+            this.panelRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +78,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
@@ -77,7 +98,7 @@
             this.urlVideoDataGridViewTextBoxColumn,
             this.usuarioIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pROPUESTARETOBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 60);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(484, 253);
@@ -144,28 +165,18 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(580, 60);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(521, 33);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(249, 331);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(249, 328);
             this.axWindowsMediaPlayer1.TabIndex = 2;
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(580, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cambiar video";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // aProp
             // 
             this.aProp.BackColor = System.Drawing.Color.LightSeaGreen;
             this.aProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aProp.Location = new System.Drawing.Point(293, 325);
+            this.aProp.Location = new System.Drawing.Point(246, 302);
             this.aProp.Name = "aProp";
             this.aProp.Size = new System.Drawing.Size(120, 53);
             this.aProp.TabIndex = 7;
@@ -177,7 +188,7 @@
             // 
             this.rProp.BackColor = System.Drawing.Color.LightSeaGreen;
             this.rProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rProp.Location = new System.Drawing.Point(117, 325);
+            this.rProp.Location = new System.Drawing.Point(93, 302);
             this.rProp.Name = "rProp";
             this.rProp.Size = new System.Drawing.Size(120, 53);
             this.rProp.TabIndex = 8;
@@ -185,19 +196,222 @@
             this.rProp.UseVisualStyleBackColor = false;
             this.rProp.Click += new System.EventHandler(this.rProp_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.propuestasToolStripMenuItem,
+            this.registroUsuariosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(824, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // propuestasToolStripMenuItem
+            // 
+            this.propuestasToolStripMenuItem.Name = "propuestasToolStripMenuItem";
+            this.propuestasToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.propuestasToolStripMenuItem.Text = "Propuestas";
+            this.propuestasToolStripMenuItem.Click += new System.EventHandler(this.propuestasToolStripMenuItem_Click);
+            // 
+            // registroUsuariosToolStripMenuItem
+            // 
+            this.registroUsuariosToolStripMenuItem.Name = "registroUsuariosToolStripMenuItem";
+            this.registroUsuariosToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.registroUsuariosToolStripMenuItem.Text = "Registro usuarios";
+            this.registroUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroUsuariosToolStripMenuItem_Click);
+            // 
+            // panelPropuestas
+            // 
+            this.panelPropuestas.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
+            this.panelPropuestas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPropuestas.Controls.Add(this.label1);
+            this.panelPropuestas.Controls.Add(this.rProp);
+            this.panelPropuestas.Controls.Add(this.axWindowsMediaPlayer1);
+            this.panelPropuestas.Controls.Add(this.dataGridView1);
+            this.panelPropuestas.Controls.Add(this.aProp);
+            this.panelPropuestas.Location = new System.Drawing.Point(12, 37);
+            this.panelPropuestas.Name = "panelPropuestas";
+            this.panelPropuestas.Size = new System.Drawing.Size(859, 497);
+            this.panelPropuestas.TabIndex = 10;
+            // 
+            // panelRegistro
+            // 
+            this.panelRegistro.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
+            this.panelRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelRegistro.Controls.Add(this.crearUsuarioButton);
+            this.panelRegistro.Controls.Add(this.checkSuper);
+            this.panelRegistro.Controls.Add(this.checkAdmin);
+            this.panelRegistro.Controls.Add(this.txtPassword);
+            this.panelRegistro.Controls.Add(this.txtUsuario);
+            this.panelRegistro.Controls.Add(this.txtApellidos);
+            this.panelRegistro.Controls.Add(this.txtNombre);
+            this.panelRegistro.Controls.Add(this.label8);
+            this.panelRegistro.Controls.Add(this.label7);
+            this.panelRegistro.Controls.Add(this.label6);
+            this.panelRegistro.Controls.Add(this.label5);
+            this.panelRegistro.Controls.Add(this.label4);
+            this.panelRegistro.Controls.Add(this.label3);
+            this.panelRegistro.Controls.Add(this.label2);
+            this.panelRegistro.Location = new System.Drawing.Point(15, 27);
+            this.panelRegistro.Name = "panelRegistro";
+            this.panelRegistro.Size = new System.Drawing.Size(386, 361);
+            this.panelRegistro.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Registro:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(25, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(25, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Apellidos:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(25, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Usuario:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(25, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Password:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(25, 192);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Administrador:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(25, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Superusuario:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(134, 69);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(167, 20);
+            this.txtNombre.TabIndex = 9;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(134, 100);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(167, 20);
+            this.txtApellidos.TabIndex = 10;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(134, 130);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(167, 20);
+            this.txtUsuario.TabIndex = 11;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(134, 162);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(167, 20);
+            this.txtPassword.TabIndex = 12;
+            // 
+            // checkAdmin
+            // 
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Location = new System.Drawing.Point(134, 197);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(15, 14);
+            this.checkAdmin.TabIndex = 13;
+            this.checkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // checkSuper
+            // 
+            this.checkSuper.AutoSize = true;
+            this.checkSuper.Location = new System.Drawing.Point(134, 229);
+            this.checkSuper.Name = "checkSuper";
+            this.checkSuper.Size = new System.Drawing.Size(15, 14);
+            this.checkSuper.TabIndex = 14;
+            this.checkSuper.UseVisualStyleBackColor = true;
+            // 
+            // crearUsuarioButton
+            // 
+            this.crearUsuarioButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.crearUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crearUsuarioButton.Location = new System.Drawing.Point(181, 269);
+            this.crearUsuarioButton.Name = "crearUsuarioButton";
+            this.crearUsuarioButton.Size = new System.Drawing.Size(120, 53);
+            this.crearUsuarioButton.TabIndex = 15;
+            this.crearUsuarioButton.Text = "Crear usuario";
+            this.crearUsuarioButton.UseVisualStyleBackColor = false;
+            this.crearUsuarioButton.Click += new System.EventHandler(this.crearUsuarioButton_Click);
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(909, 545);
-            this.Controls.Add(this.rProp);
-            this.Controls.Add(this.aProp);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(824, 405);
+            this.Controls.Add(this.panelRegistro);
+            this.Controls.Add(this.panelPropuestas);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Propuestas";
             this.Text = "Propuestas";
             this.Load += new System.EventHandler(this.Propuestas_Load);
@@ -205,6 +419,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panelPropuestas.ResumeLayout(false);
+            this.panelPropuestas.PerformLayout();
+            this.panelRegistro.ResumeLayout(false);
+            this.panelRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,8 +444,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn urlVideoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioIDDataGridViewTextBoxColumn;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button aProp;
         private System.Windows.Forms.Button rProp;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem propuestasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroUsuariosToolStripMenuItem;
+        private System.Windows.Forms.Panel panelPropuestas;
+        private System.Windows.Forms.Panel panelRegistro;
+        private System.Windows.Forms.Button crearUsuarioButton;
+        private System.Windows.Forms.CheckBox checkSuper;
+        private System.Windows.Forms.CheckBox checkAdmin;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
