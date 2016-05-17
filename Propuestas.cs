@@ -75,6 +75,7 @@ namespace ViralizeDesktop
                 dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
             {
+                
                 getVideoUrl = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
                 id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 CargarVideo(getVideoUrl);
@@ -120,6 +121,8 @@ namespace ViralizeDesktop
             dataContext.RETOes.Add(reto);
             dataContext.SaveChanges();
             MessageBox.Show("Accepted");
+            this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+            this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
 
         }
 
@@ -134,6 +137,10 @@ namespace ViralizeDesktop
 
             }
             dataContext.SaveChanges();
+
+            this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+            this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
+
 
 
             MessageBox.Show("Denied");
