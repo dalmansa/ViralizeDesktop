@@ -49,20 +49,20 @@
             this.registroUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPropuestas = new System.Windows.Forms.Panel();
             this.panelRegistro = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.checkAdmin = new System.Windows.Forms.CheckBox();
-            this.checkSuper = new System.Windows.Forms.CheckBox();
             this.crearUsuarioButton = new System.Windows.Forms.Button();
+            this.checkSuper = new System.Windows.Forms.CheckBox();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -258,77 +258,64 @@
             this.panelRegistro.Size = new System.Drawing.Size(386, 361);
             this.panelRegistro.TabIndex = 11;
             // 
-            // label2
+            // crearUsuarioButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Registro:";
+            this.crearUsuarioButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.crearUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crearUsuarioButton.Location = new System.Drawing.Point(181, 269);
+            this.crearUsuarioButton.Name = "crearUsuarioButton";
+            this.crearUsuarioButton.Size = new System.Drawing.Size(120, 53);
+            this.crearUsuarioButton.TabIndex = 15;
+            this.crearUsuarioButton.Text = "Crear usuario";
+            this.crearUsuarioButton.UseVisualStyleBackColor = false;
+            this.crearUsuarioButton.Click += new System.EventHandler(this.crearUsuarioButton_Click);
             // 
-            // label3
+            // checkSuper
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(25, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
+            this.checkSuper.AutoSize = true;
+            this.checkSuper.Location = new System.Drawing.Point(134, 229);
+            this.checkSuper.Name = "checkSuper";
+            this.checkSuper.Size = new System.Drawing.Size(15, 14);
+            this.checkSuper.TabIndex = 14;
+            this.checkSuper.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // checkAdmin
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(25, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Apellidos:";
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Location = new System.Drawing.Point(134, 197);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(15, 14);
+            this.checkAdmin.TabIndex = 13;
+            this.checkAdmin.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // txtPassword
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(25, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Usuario:";
+            this.txtPassword.Location = new System.Drawing.Point(134, 162);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(167, 20);
+            this.txtPassword.TabIndex = 12;
             // 
-            // label6
+            // txtUsuario
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(25, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Password:";
+            this.txtUsuario.Location = new System.Drawing.Point(134, 130);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(167, 20);
+            this.txtUsuario.TabIndex = 11;
             // 
-            // label7
+            // txtApellidos
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(25, 192);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Administrador:";
+            this.txtApellidos.Location = new System.Drawing.Point(134, 100);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(167, 20);
+            this.txtApellidos.TabIndex = 10;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(134, 69);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(167, 20);
+            this.txtNombre.TabIndex = 9;
             // 
             // label8
             // 
@@ -342,64 +329,77 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Superusuario:";
             // 
-            // txtNombre
+            // label7
             // 
-            this.txtNombre.Location = new System.Drawing.Point(134, 69);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 20);
-            this.txtNombre.TabIndex = 9;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(25, 192);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Administrador:";
             // 
-            // txtApellidos
+            // label6
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(134, 100);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(167, 20);
-            this.txtApellidos.TabIndex = 10;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(25, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Password:";
             // 
-            // txtUsuario
+            // label5
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(134, 130);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(167, 20);
-            this.txtUsuario.TabIndex = 11;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(25, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Usuario:";
             // 
-            // txtPassword
+            // label4
             // 
-            this.txtPassword.Location = new System.Drawing.Point(134, 162);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(167, 20);
-            this.txtPassword.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(25, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Apellidos:";
             // 
-            // checkAdmin
+            // label3
             // 
-            this.checkAdmin.AutoSize = true;
-            this.checkAdmin.Location = new System.Drawing.Point(134, 197);
-            this.checkAdmin.Name = "checkAdmin";
-            this.checkAdmin.Size = new System.Drawing.Size(15, 14);
-            this.checkAdmin.TabIndex = 13;
-            this.checkAdmin.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(25, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre:";
             // 
-            // checkSuper
+            // label2
             // 
-            this.checkSuper.AutoSize = true;
-            this.checkSuper.Location = new System.Drawing.Point(134, 229);
-            this.checkSuper.Name = "checkSuper";
-            this.checkSuper.Size = new System.Drawing.Size(15, 14);
-            this.checkSuper.TabIndex = 14;
-            this.checkSuper.UseVisualStyleBackColor = true;
-            // 
-            // crearUsuarioButton
-            // 
-            this.crearUsuarioButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.crearUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crearUsuarioButton.Location = new System.Drawing.Point(181, 269);
-            this.crearUsuarioButton.Name = "crearUsuarioButton";
-            this.crearUsuarioButton.Size = new System.Drawing.Size(120, 53);
-            this.crearUsuarioButton.TabIndex = 15;
-            this.crearUsuarioButton.Text = "Crear usuario";
-            this.crearUsuarioButton.UseVisualStyleBackColor = false;
-            this.crearUsuarioButton.Click += new System.EventHandler(this.crearUsuarioButton_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Registro:";
             // 
             // Propuestas
             // 

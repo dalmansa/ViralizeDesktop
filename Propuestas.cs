@@ -10,6 +10,7 @@ using System.Windows.Forms;
 /* Necesario para hash SHA512 */
 using System.Security.Cryptography;
 using System.Text;
+using NReco.VideoConverter;
 
 namespace ViralizeDesktop
 {
@@ -123,7 +124,8 @@ namespace ViralizeDesktop
             MessageBox.Show("Accepted");
             this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
             this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
-
+            var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+            ffMpeg.GetVideoThumbnail("http ://"+urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEE.jpg", 1);
         }
 
         private void rProp_Click(object sender, EventArgs e)
