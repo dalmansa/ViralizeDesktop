@@ -23,6 +23,8 @@ namespace ViralizeDesktop
         {
             // TODO: This line of code loads data into the 'vIRALIZEDataSet1.USUARIO' table. You can move, or remove it, as needed.
             this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
 
         }
 
@@ -52,14 +54,41 @@ namespace ViralizeDesktop
             if (selectedRowCount > 0)
             {
                 id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                txtNombre.Text = (string)dataGridView1.SelectedRows[0].Cells[1].Value;
+                txtApellidos.Text = (string)dataGridView1.SelectedRows[0].Cells[2].Value;
+                txtPassword.Text = (string)dataGridView1.SelectedRows[0].Cells[4].Value;
+                txtUsername.Text = (string)dataGridView1.SelectedRows[0].Cells[3].Value;
+
+                int admin = (int)dataGridView1.SelectedRows[0].Cells[7].Value;
+                int super= (int)dataGridView1.SelectedRows[0].Cells[8].Value;
+
+
+                if (admin == 1)
+                {
+                    checkAdmin.Checked = true;
+                }
+                else {
+                    checkAdmin.Checked = false;
+                }
+
+                if (super == 1)
+                {
+                    checkSuper.Checked = true;
+                }
+                else
+                {
+                    checkSuper.Checked = false;
+                }
             }
-           
+
+            
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            dataGridView1.Update();
-            dataGridView1.EndEdit();
+
         }
     }
 }

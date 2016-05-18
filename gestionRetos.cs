@@ -16,5 +16,12 @@ namespace ViralizeDesktop
         {
             InitializeComponent();
         }
+
+        private void gestionRetos_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vIRALIZEDataSet2.RETO' table. You can move, or remove it, as needed.
+            this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
+
+        }
     }
 }

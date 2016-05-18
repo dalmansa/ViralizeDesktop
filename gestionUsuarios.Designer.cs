@@ -31,24 +31,36 @@
             this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vIRALIZEDataSet1 = new ViralizeDesktop.VIRALIZEDataSet1();
             this.uSUARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vIRALIZEDataSet1 = new ViralizeDesktop.VIRALIZEDataSet1();
             this.uSUARIOTableAdapter = new ViralizeDesktop.VIRALIZEDataSet1TableAdapters.USUARIOTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkSuper = new System.Windows.Forms.CheckBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puntuacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nivelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nivelID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.superusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plataformaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -66,6 +78,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -74,92 +87,32 @@
             this.apellidosDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.puntuacionDataGridViewTextBoxColumn,
-            this.nivelIDDataGridViewTextBoxColumn,
+            this.puntuacion,
+            this.nivelID,
             this.administradorDataGridViewTextBoxColumn,
             this.superusuarioDataGridViewTextBoxColumn,
             this.plataformaIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.uSUARIOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 150);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(526, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // vIRALIZEDataSet1
-            // 
-            this.vIRALIZEDataSet1.DataSetName = "VIRALIZEDataSet1";
-            this.vIRALIZEDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // uSUARIOBindingSource
             // 
             this.uSUARIOBindingSource.DataMember = "USUARIO";
             this.uSUARIOBindingSource.DataSource = this.vIRALIZEDataSet1;
             // 
+            // vIRALIZEDataSet1
+            // 
+            this.vIRALIZEDataSet1.DataSetName = "VIRALIZEDataSet1";
+            this.vIRALIZEDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // uSUARIOTableAdapter
             // 
             this.uSUARIOTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // puntuacionDataGridViewTextBoxColumn
-            // 
-            this.puntuacionDataGridViewTextBoxColumn.DataPropertyName = "puntuacion";
-            this.puntuacionDataGridViewTextBoxColumn.HeaderText = "puntuacion";
-            this.puntuacionDataGridViewTextBoxColumn.Name = "puntuacionDataGridViewTextBoxColumn";
-            // 
-            // nivelIDDataGridViewTextBoxColumn
-            // 
-            this.nivelIDDataGridViewTextBoxColumn.DataPropertyName = "nivelID";
-            this.nivelIDDataGridViewTextBoxColumn.HeaderText = "nivelID";
-            this.nivelIDDataGridViewTextBoxColumn.Name = "nivelIDDataGridViewTextBoxColumn";
-            // 
-            // administradorDataGridViewTextBoxColumn
-            // 
-            this.administradorDataGridViewTextBoxColumn.DataPropertyName = "administrador";
-            this.administradorDataGridViewTextBoxColumn.HeaderText = "administrador";
-            this.administradorDataGridViewTextBoxColumn.Name = "administradorDataGridViewTextBoxColumn";
-            // 
-            // superusuarioDataGridViewTextBoxColumn
-            // 
-            this.superusuarioDataGridViewTextBoxColumn.DataPropertyName = "superusuario";
-            this.superusuarioDataGridViewTextBoxColumn.HeaderText = "superusuario";
-            this.superusuarioDataGridViewTextBoxColumn.Name = "superusuarioDataGridViewTextBoxColumn";
-            // 
-            // plataformaIDDataGridViewTextBoxColumn
-            // 
-            this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "plataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "plataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
             // 
             // button1
             // 
@@ -175,13 +128,203 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(218, 203);
+            this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(254, 387);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(120, 53);
             this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSize = true;
+            this.nombre.BackColor = System.Drawing.Color.Transparent;
+            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.ForeColor = System.Drawing.SystemColors.Control;
+            this.nombre.Location = new System.Drawing.Point(12, 264);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(69, 20);
+            this.nombre.TabIndex = 19;
+            this.nombre.Text = "Nombre:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(129, 266);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(12, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Apellidos:";
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(129, 295);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidos.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(12, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Username:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(129, 325);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(12, 354);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(129, 356);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(12, 387);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 20);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Admin:";
+            // 
+            // checkAdmin
+            // 
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Location = new System.Drawing.Point(129, 387);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(15, 14);
+            this.checkAdmin.TabIndex = 28;
+            this.checkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(12, 416);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 20);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Superusuario:";
+            // 
+            // checkSuper
+            // 
+            this.checkSuper.AutoSize = true;
+            this.checkSuper.Location = new System.Drawing.Point(129, 422);
+            this.checkSuper.Name = "checkSuper";
+            this.checkSuper.Size = new System.Drawing.Size(15, 14);
+            this.checkSuper.TabIndex = 30;
+            this.checkSuper.UseVisualStyleBackColor = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // puntuacion
+            // 
+            this.puntuacion.DataPropertyName = "puntuacion";
+            this.puntuacion.HeaderText = "puntuacion";
+            this.puntuacion.Name = "puntuacion";
+            this.puntuacion.ReadOnly = true;
+            // 
+            // nivelID
+            // 
+            this.nivelID.DataPropertyName = "nivelID";
+            this.nivelID.HeaderText = "nivelID";
+            this.nivelID.Name = "nivelID";
+            this.nivelID.ReadOnly = true;
+            // 
+            // administradorDataGridViewTextBoxColumn
+            // 
+            this.administradorDataGridViewTextBoxColumn.DataPropertyName = "administrador";
+            this.administradorDataGridViewTextBoxColumn.HeaderText = "administrador";
+            this.administradorDataGridViewTextBoxColumn.Name = "administradorDataGridViewTextBoxColumn";
+            this.administradorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // superusuarioDataGridViewTextBoxColumn
+            // 
+            this.superusuarioDataGridViewTextBoxColumn.DataPropertyName = "superusuario";
+            this.superusuarioDataGridViewTextBoxColumn.HeaderText = "superusuario";
+            this.superusuarioDataGridViewTextBoxColumn.Name = "superusuarioDataGridViewTextBoxColumn";
+            this.superusuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // plataformaIDDataGridViewTextBoxColumn
+            // 
+            this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "plataformaID";
+            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "plataformaID";
+            this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
+            this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gestionUsuarios
             // 
@@ -189,7 +332,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(684, 307);
+            this.ClientSize = new System.Drawing.Size(684, 491);
+            this.Controls.Add(this.checkSuper);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.checkAdmin);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtApellidos);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -198,8 +353,8 @@
             this.Text = "gestionUsuarios";
             this.Load += new System.EventHandler(this.gestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,17 +367,29 @@
         private VIRALIZEDataSet1 vIRALIZEDataSet1;
         private System.Windows.Forms.BindingSource uSUARIOBindingSource;
         private VIRALIZEDataSet1TableAdapters.USUARIOTableAdapter uSUARIOTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkAdmin;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkSuper;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nivelIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nivelID;
         private System.Windows.Forms.DataGridViewTextBoxColumn administradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn superusuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plataformaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

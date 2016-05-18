@@ -79,6 +79,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 3;
+            this.txtUser.Text = "Pmendoza";
             // 
             // txtPass
             // 
@@ -87,6 +88,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 4;
+            this.txtPass.Text = "pepe";
             // 
             // pictureBox1
             // 
