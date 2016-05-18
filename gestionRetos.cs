@@ -15,6 +15,7 @@ namespace ViralizeDesktop
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         int activo;
         int id;
+        int usuarioID;
         public gestionRetos()
         {
             InitializeComponent();
@@ -64,6 +65,7 @@ namespace ViralizeDesktop
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
             Int32 selectedRowCount =
                 dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
@@ -86,12 +88,30 @@ namespace ViralizeDesktop
                 {
                     checkActivo.Checked = false;
                 }
-
                 
+
+                var query = from al in dataContext.SHAREs
+                            where al.retoID == id
+                            select al;
+                foreach (var al in query)
+                {
+                    listView1.Items.Add(al.USUARIO.username);
+                       // dataGridView2.Rows.Add(al.USUARIO.username);
+                   //MessageBox.Show(al.USUARIO.username);
+
+                }
+                
+
+
+
             }
 
 
 
         }
+
+      
+
+        
     }
 }

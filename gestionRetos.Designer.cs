@@ -56,6 +56,7 @@
             this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
             this.txtURLVideo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).BeginInit();
@@ -302,13 +303,23 @@
             this.label5.TabIndex = 43;
             this.label5.Text = "URL Video:";
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(558, 43);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(166, 235);
+            this.listView1.TabIndex = 45;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
             // gestionRetos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(600, 412);
+            this.ClientSize = new System.Drawing.Size(736, 412);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.txtURLVideo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimeFinal);
@@ -364,5 +375,6 @@
         private System.Windows.Forms.DateTimePicker dateTimeFinal;
         private System.Windows.Forms.TextBox txtURLVideo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView listView1;
     }
 }

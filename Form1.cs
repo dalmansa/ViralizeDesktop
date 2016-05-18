@@ -34,7 +34,7 @@ namespace ViralizeDesktop
             if (query != null)
             {
                 Propuestas prop = new Propuestas();
-                prop.Show();
+                prop.ShowDialog();
             }
             else
                 MessageBox.Show("Login incorrect");
