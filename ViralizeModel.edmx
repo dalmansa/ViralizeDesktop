@@ -130,8 +130,8 @@
           <Property Name="password" Type="nvarchar" MaxLength="200" />
           <Property Name="puntuacion" Type="int" />
           <Property Name="nivelID" Type="int" />
-          <Property Name="administrador" Type="tinyint" Nullable="false" />
-          <Property Name="superusuario" Type="tinyint" Nullable="false" />
+          <Property Name="administrador" Type="int" />
+          <Property Name="superusuario" Type="int" />
           <Property Name="plataformaID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="USUARIO_LOG">
@@ -449,7 +449,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="USUARIOs" Relationship="Self.FK_USUARIO_NIVEL" FromRole="NIVEL" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_NIVEL" FromRole="NIVEL" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="NIVEL_LOG">
           <Key>
@@ -468,7 +468,7 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="RETOes" Relationship="Self.FK_RETO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="RETO" />
-          <NavigationProperty Name="USUARIOs" Relationship="Self.FK_USUARIO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="PLATAFORMA_LOG">
           <Key>
@@ -489,7 +489,7 @@
           <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="urlVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usuarioID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_PROPUESTA_USUARIO" FromRole="PROPUESTA_RETO" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_PROPUESTA_USUARIO" FromRole="PROPUESTA_RETO" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="RETO">
           <Key>
@@ -505,8 +505,8 @@
           <Property Name="usuarioID" Type="Int32" Nullable="false" />
           <Property Name="plataformaID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PLATAFORMA" Relationship="Self.FK_RETO_PLATAFORMA" FromRole="RETO" ToRole="PLATAFORMA" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_RETO_USUARIO" FromRole="RETO" ToRole="USUARIO" />
           <NavigationProperty Name="SHAREs" Relationship="Self.FK_SHARE_RETO" FromRole="RETO" ToRole="SHARE" />
+          <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_RETO_USUARIO" FromRole="RETO" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="RETO_LOG">
           <Key>
@@ -528,7 +528,7 @@
           <Property Name="usuarioID" Type="Int32" Nullable="false" />
           <Property Name="retoID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="RETO" Relationship="Self.FK_SHARE_RETO" FromRole="SHARE" ToRole="RETO" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_SHARE_USUARIO" FromRole="SHARE" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_SHARE_USUARIO" FromRole="SHARE" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="SHARE_BLOQUEADA">
           <Key>
@@ -546,27 +546,6 @@
           <Property Name="share_bloqueada_id" Type="Int32" Nullable="false" />
           <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="USUARIO">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="puntuacion" Type="Int32" />
-          <Property Name="nivelID" Type="Int32" />
-          <Property Name="administrador" Type="Byte" Nullable="false" />
-          <Property Name="superusuario" Type="Byte" Nullable="false" />
-          <Property Name="plataformaID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="NIVEL" Relationship="Self.FK_USUARIO_NIVEL" FromRole="USUARIO" ToRole="NIVEL" />
-          <NavigationProperty Name="PLATAFORMA" Relationship="Self.FK_USUARIO_PLATAFORMA" FromRole="USUARIO" ToRole="PLATAFORMA" />
-          <NavigationProperty Name="PROPUESTA_RETO" Relationship="Self.FK_PROPUESTA_USUARIO" FromRole="USUARIO" ToRole="PROPUESTA_RETO" />
-          <NavigationProperty Name="RETOes" Relationship="Self.FK_RETO_USUARIO" FromRole="USUARIO" ToRole="RETO" />
-          <NavigationProperty Name="SHAREs" Relationship="Self.FK_SHARE_USUARIO" FromRole="USUARIO" ToRole="SHARE" />
-          <NavigationProperty Name="USUARIO_LOGRO" Relationship="Self.FK_USUARIO_LOGRO" FromRole="USUARIO" ToRole="USUARIO_LOGRO" />
         </EntityType>
         <EntityType Name="USUARIO_LOG">
           <Key>
@@ -586,7 +565,7 @@
           <Property Name="logroID" Type="Int32" Nullable="false" />
           <Property Name="fechaObtencion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="LOGRO" Relationship="Self.FK_LOGRO_USUARIO" FromRole="USUARIO_LOGRO" ToRole="LOGRO" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_USUARIO_LOGRO" FromRole="USUARIO_LOGRO" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_USUARIO_LOGRO" FromRole="USUARIO_LOGRO" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="USUARIO_LOGRO_LOG">
           <Key>
@@ -611,20 +590,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_USUARIO_NIVEL">
-          <End Role="NIVEL" Type="Self.NIVEL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NIVEL">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="USUARIO">
-              <PropertyRef Name="nivelID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_RETO_PLATAFORMA">
           <End Role="PLATAFORMA" Type="Self.PLATAFORMA" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -639,44 +604,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_USUARIO_PLATAFORMA">
-          <End Role="PLATAFORMA" Type="Self.PLATAFORMA" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PLATAFORMA">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="USUARIO">
-              <PropertyRef Name="plataformaID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PROPUESTA_USUARIO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
-          <End Role="PROPUESTA_RETO" Type="Self.PROPUESTA_RETO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="PROPUESTA_RETO">
-              <PropertyRef Name="usuarioID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RETO_USUARIO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
-          <End Role="RETO" Type="Self.RETO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="RETO">
-              <PropertyRef Name="usuarioID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SHARE_RETO">
           <End Role="RETO" Type="Self.RETO" Multiplicity="1" />
           <End Role="SHARE" Type="Self.SHARE" Multiplicity="*" />
@@ -686,34 +613,6 @@
             </Principal>
             <Dependent Role="SHARE">
               <PropertyRef Name="retoID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SHARE_USUARIO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="SHARE" Type="Self.SHARE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="SHARE">
-              <PropertyRef Name="usuarioID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_USUARIO_LOGRO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="USUARIO_LOGRO" Type="Self.USUARIO_LOGRO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="USUARIO_LOGRO">
-              <PropertyRef Name="usuarioID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -730,7 +629,6 @@
           <EntitySet Name="SHAREs" EntityType="Self.SHARE" />
           <EntitySet Name="SHARE_BLOQUEADA" EntityType="Self.SHARE_BLOQUEADA" />
           <EntitySet Name="SHARE_BLOQUEADA_LOG" EntityType="Self.SHARE_BLOQUEADA_LOG" />
-          <EntitySet Name="USUARIOs" EntityType="Self.USUARIO" />
           <EntitySet Name="USUARIO_LOG" EntityType="Self.USUARIO_LOG" />
           <EntitySet Name="USUARIO_LOGRO" EntityType="Self.USUARIO_LOGRO" />
           <EntitySet Name="USUARIO_LOGRO_LOG" EntityType="Self.USUARIO_LOGRO_LOG" />
@@ -738,37 +636,13 @@
             <End Role="LOGRO" EntitySet="LOGROes" />
             <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
           </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_NIVEL" Association="Self.FK_USUARIO_NIVEL">
-            <End Role="NIVEL" EntitySet="NIVELs" />
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-          </AssociationSet>
           <AssociationSet Name="FK_RETO_PLATAFORMA" Association="Self.FK_RETO_PLATAFORMA">
             <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
-            <End Role="RETO" EntitySet="RETOes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_PLATAFORMA" Association="Self.FK_USUARIO_PLATAFORMA">
-            <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PROPUESTA_USUARIO" Association="Self.FK_PROPUESTA_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-            <End Role="PROPUESTA_RETO" EntitySet="PROPUESTA_RETO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RETO_USUARIO" Association="Self.FK_RETO_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIOs" />
             <End Role="RETO" EntitySet="RETOes" />
           </AssociationSet>
           <AssociationSet Name="FK_SHARE_RETO" Association="Self.FK_SHARE_RETO">
             <End Role="RETO" EntitySet="RETOes" />
             <End Role="SHARE" EntitySet="SHAREs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SHARE_USUARIO" Association="Self.FK_SHARE_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-            <End Role="SHARE" EntitySet="SHAREs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_LOGRO" Association="Self.FK_USUARIO_LOGRO">
-            <End Role="USUARIO" EntitySet="USUARIOs" />
-            <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
           </AssociationSet>
           <FunctionImport Name="spLogroLogDel" ReturnType="Collection(VIRALIZEModel.spLogroLogDel_Result)">
             <Parameter Name="first" Mode="In" Type="Int32" />
@@ -854,7 +728,32 @@
             <Parameter Name="first" Mode="In" Type="Int32" />
             <Parameter Name="last" Mode="In" Type="Int32" />
           </FunctionImport>
-        </EntityContainer>
+          <EntitySet Name="USUARIOs" EntityType="VIRALIZEModel.USUARIO" />
+          <AssociationSet Name="FK_USUARIO_NIVEL" Association="VIRALIZEModel.FK_USUARIO_NIVEL">
+            <End Role="NIVEL" EntitySet="NIVELs" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_PLATAFORMA" Association="VIRALIZEModel.FK_USUARIO_PLATAFORMA">
+            <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROPUESTA_USUARIO" Association="VIRALIZEModel.FK_PROPUESTA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="PROPUESTA_RETO" EntitySet="PROPUESTA_RETO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RETO_USUARIO" Association="VIRALIZEModel.FK_RETO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="RETO" EntitySet="RETOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SHARE_USUARIO" Association="VIRALIZEModel.FK_SHARE_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="SHARE" EntitySet="SHAREs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_LOGRO" Association="VIRALIZEModel.FK_USUARIO_LOGRO">
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+            <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
+          </AssociationSet>
+          </EntityContainer>
         <ComplexType Name="spLogroLogDel_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="nombre" Nullable="true" />
@@ -993,7 +892,108 @@
           <Property Type="Int32" Name="nivelID" Nullable="true" />
           <Property Type="Int32" Name="plataformaID" Nullable="false" />
         </ComplexType>
-      </Schema>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="puntuacion" Type="Int32" />
+          <Property Name="nivelID" Type="Int32" />
+          <Property Name="administrador" Type="Int32" />
+          <Property Name="superusuario" Type="Int32" />
+          <Property Name="plataformaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NIVEL" Relationship="VIRALIZEModel.FK_USUARIO_NIVEL" FromRole="USUARIO" ToRole="NIVEL" />
+          <NavigationProperty Name="PLATAFORMA" Relationship="VIRALIZEModel.FK_USUARIO_PLATAFORMA" FromRole="USUARIO" ToRole="PLATAFORMA" />
+          <NavigationProperty Name="PROPUESTA_RETO" Relationship="VIRALIZEModel.FK_PROPUESTA_USUARIO" FromRole="USUARIO" ToRole="PROPUESTA_RETO" />
+          <NavigationProperty Name="RETOes" Relationship="VIRALIZEModel.FK_RETO_USUARIO" FromRole="USUARIO" ToRole="RETO" />
+          <NavigationProperty Name="SHAREs" Relationship="VIRALIZEModel.FK_SHARE_USUARIO" FromRole="USUARIO" ToRole="SHARE" />
+          <NavigationProperty Name="USUARIO_LOGRO" Relationship="VIRALIZEModel.FK_USUARIO_LOGRO" FromRole="USUARIO" ToRole="USUARIO_LOGRO" />
+        </EntityType>
+        <Association Name="FK_USUARIO_NIVEL">
+          <End Type="VIRALIZEModel.NIVEL" Role="NIVEL" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIVEL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="nivelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_PLATAFORMA">
+          <End Type="VIRALIZEModel.PLATAFORMA" Role="PLATAFORMA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLATAFORMA">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="plataformaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROPUESTA_USUARIO">
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="VIRALIZEModel.PROPUESTA_RETO" Role="PROPUESTA_RETO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PROPUESTA_RETO">
+              <PropertyRef Name="usuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RETO_USUARIO">
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="VIRALIZEModel.RETO" Role="RETO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RETO">
+              <PropertyRef Name="usuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SHARE_USUARIO">
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VIRALIZEModel.SHARE" Role="SHARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SHARE">
+              <PropertyRef Name="usuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_LOGRO">
+          <End Type="VIRALIZEModel.USUARIO" Role="USUARIO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VIRALIZEModel.USUARIO_LOGRO" Role="USUARIO_LOGRO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USUARIO_LOGRO">
+              <PropertyRef Name="usuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1122,22 +1122,6 @@
                 <ScalarProperty Name="share_bloqueada_id" ColumnName="share_bloqueada_id" />
                 <ScalarProperty Name="op" ColumnName="op" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="USUARIOs">
-            <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO">
-              <MappingFragment StoreEntitySet="USUARIO">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
-                <ScalarProperty Name="nivelID" ColumnName="nivelID" />
-                <ScalarProperty Name="administrador" ColumnName="administrador" />
-                <ScalarProperty Name="superusuario" ColumnName="superusuario" />
-                <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1393,6 +1377,22 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="USUARIOs">
+            <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+                <ScalarProperty Name="superusuario" ColumnName="superusuario" />
+                <ScalarProperty Name="administrador" ColumnName="administrador" />
+                <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+                <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

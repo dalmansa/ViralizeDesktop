@@ -127,22 +127,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="USUARIOs">
-      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO">
-        <MappingFragment StoreEntitySet="USUARIO">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
-          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
-          <ScalarProperty Name="administrador" ColumnName="administrador" />
-          <ScalarProperty Name="superusuario" ColumnName="superusuario" />
-          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="USUARIO_LOG">
       <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO_LOG">
         <MappingFragment StoreEntitySet="USUARIO_LOG">
@@ -395,5 +379,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="USUARIOs">
+      <EntityTypeMapping TypeName="VIRALIZEModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="plataformaID" ColumnName="plataformaID" />
+          <ScalarProperty Name="superusuario" ColumnName="superusuario" />
+          <ScalarProperty Name="administrador" ColumnName="administrador" />
+          <ScalarProperty Name="nivelID" ColumnName="nivelID" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

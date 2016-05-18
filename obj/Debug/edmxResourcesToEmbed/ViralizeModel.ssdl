@@ -125,8 +125,8 @@
     <Property Name="password" Type="nvarchar" MaxLength="200" />
     <Property Name="puntuacion" Type="int" />
     <Property Name="nivelID" Type="int" />
-    <Property Name="administrador" Type="tinyint" Nullable="false" />
-    <Property Name="superusuario" Type="tinyint" Nullable="false" />
+    <Property Name="administrador" Type="int" />
+    <Property Name="superusuario" Type="int" />
     <Property Name="plataformaID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="USUARIO_LOG">

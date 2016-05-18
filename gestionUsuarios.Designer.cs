@@ -53,11 +53,8 @@
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nivelID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.superusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plataformaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).BeginInit();
@@ -87,16 +84,13 @@
             this.apellidosDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.puntuacion,
-            this.nivelID,
             this.administradorDataGridViewTextBoxColumn,
-            this.superusuarioDataGridViewTextBoxColumn,
-            this.plataformaIDDataGridViewTextBoxColumn});
+            this.superusuarioDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.uSUARIOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(606, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -291,20 +285,6 @@
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // puntuacion
-            // 
-            this.puntuacion.DataPropertyName = "puntuacion";
-            this.puntuacion.HeaderText = "puntuacion";
-            this.puntuacion.Name = "puntuacion";
-            this.puntuacion.ReadOnly = true;
-            // 
-            // nivelID
-            // 
-            this.nivelID.DataPropertyName = "nivelID";
-            this.nivelID.HeaderText = "nivelID";
-            this.nivelID.Name = "nivelID";
-            this.nivelID.ReadOnly = true;
-            // 
             // administradorDataGridViewTextBoxColumn
             // 
             this.administradorDataGridViewTextBoxColumn.DataPropertyName = "administrador";
@@ -318,13 +298,6 @@
             this.superusuarioDataGridViewTextBoxColumn.HeaderText = "superusuario";
             this.superusuarioDataGridViewTextBoxColumn.Name = "superusuarioDataGridViewTextBoxColumn";
             this.superusuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // plataformaIDDataGridViewTextBoxColumn
-            // 
-            this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "plataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "plataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
-            this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gestionUsuarios
             // 
@@ -386,10 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puntuacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nivelID;
         private System.Windows.Forms.DataGridViewTextBoxColumn administradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn superusuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn plataformaIDDataGridViewTextBoxColumn;
     }
 }

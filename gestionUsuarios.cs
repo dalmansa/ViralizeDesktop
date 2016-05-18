@@ -14,6 +14,9 @@ namespace ViralizeDesktop
     {
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         int id;
+        int admin;
+        int super;
+        string hashkey = "ViralizeHashKey";
         public gestionUsuarios()
         {
             InitializeComponent();
@@ -59,8 +62,8 @@ namespace ViralizeDesktop
                 txtPassword.Text = (string)dataGridView1.SelectedRows[0].Cells[4].Value;
                 txtUsername.Text = (string)dataGridView1.SelectedRows[0].Cells[3].Value;
 
-                int admin = (int)dataGridView1.SelectedRows[0].Cells[7].Value;
-                int super= (int)dataGridView1.SelectedRows[0].Cells[8].Value;
+                admin = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[5].Value);
+                super= Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[6].Value);
 
 
                 if (admin == 1)
@@ -88,7 +91,50 @@ namespace ViralizeDesktop
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            var query = from al in dataContext.USUARIOs
+                        where al.id == id
+                        select al;
+            foreach (var al in query)
+            {
+                al.nombre = txtNombre.Text;
+                al.apellidos = txtApellidos.Text;
+                al.username = txtUsername.Text;
+                string hash = CreateSHAHash(txtPassword.Text, hashkey);
+                al.password = hash;
 
+                if (checkAdmin.Checked)
+                {
+                    al.administrador = 1;
+                }
+                else {
+
+                    al.administrador = 0;
+                }
+
+                if (checkSuper.Checked)
+                {
+                    al.superusuario = 1;
+                }
+                else {
+                    al.superusuario = 0;
+                }
+
+            }
+            dataContext.SaveChanges();
+
+            this.uSUARIOTableAdapter.Update(this.vIRALIZEDataSet1.USUARIO);
+            this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
+            MessageBox.Show("Usuario modificado");
+        }
+
+
+        public static string CreateSHAHash(string Text, string Salt)
+        {
+            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
+            Byte[] HashAsByte = System.Text.Encoding.UTF8.GetBytes(string.Concat(Text, Salt));
+            Byte[] EncryptedBytes = HashTool.ComputeHash(HashAsByte);
+            HashTool.Clear();
+            return Convert.ToBase64String(EncryptedBytes);
         }
     }
 }

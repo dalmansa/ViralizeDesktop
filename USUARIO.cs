@@ -30,8 +30,8 @@ namespace ViralizeDesktop
         public string password { get; set; }
         public Nullable<int> puntuacion { get; set; }
         public Nullable<int> nivelID { get; set; }
-        public byte administrador { get; set; }
-        public byte superusuario { get; set; }
+        public Nullable<int> administrador { get; set; }
+        public Nullable<int> superusuario { get; set; }
         public int plataformaID { get; set; }
     
         public virtual NIVEL NIVEL { get; set; }

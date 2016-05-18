@@ -17,20 +17,20 @@
         <EntityTypeShape EntityType="VIRALIZEModel.SHARE" Width="1.5" PointX="11.25" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VIRALIZEModel.SHARE_BLOQUEADA" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VIRALIZEModel.SHARE_BLOQUEADA_LOG" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VIRALIZEModel.USUARIO" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="VIRALIZEModel.USUARIO_LOG" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VIRALIZEModel.USUARIO_LOGRO" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="VIRALIZEModel.USUARIO_LOGRO_LOG" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
         <AssociationConnector Association="VIRALIZEModel.FK_LOGRO_USUARIO" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_NIVEL" ManuallyRouted="false" />
         <AssociationConnector Association="VIRALIZEModel.FK_RETO_PLATAFORMA" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_PLATAFORMA" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_PROPUESTA_USUARIO" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_RETO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="VIRALIZEModel.FK_SHARE_RETO" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_SHARE_USUARIO" ManuallyRouted="false" />
-        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_LOGRO" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="VIRALIZEModel.USUARIO" Width="1.5" PointX="6" PointY="4" />
+        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_NIVEL" />
+        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_PLATAFORMA" />
+        <AssociationConnector Association="VIRALIZEModel.FK_PROPUESTA_USUARIO" />
+        <AssociationConnector Association="VIRALIZEModel.FK_RETO_USUARIO" />
+        <AssociationConnector Association="VIRALIZEModel.FK_SHARE_USUARIO" />
+        <AssociationConnector Association="VIRALIZEModel.FK_USUARIO_LOGRO" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

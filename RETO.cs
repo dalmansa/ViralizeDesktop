@@ -31,8 +31,8 @@ namespace ViralizeDesktop
         public int plataformaID { get; set; }
     
         public virtual PLATAFORMA PLATAFORMA { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SHARE> SHAREs { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }
