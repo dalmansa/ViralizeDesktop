@@ -19,3 +19,8 @@ C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDe
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.pdb
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\NReco.VideoConverter.dll
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\NReco.VideoConverter.xml
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.gestionUsuarios.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\VIRALIZEDataSet1.Designer.cs
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\VIRALIZEDataSet1.xsc
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\VIRALIZEDataSet1.xsd
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\VIRALIZEDataSet1.xss

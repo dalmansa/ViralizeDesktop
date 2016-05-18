@@ -45,11 +45,12 @@ namespace ViralizeDesktop
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
             panelRegistro.Hide();
+            panelAdmin.Hide();
         }
 
         private void CargarVideo(String videoUrl)
         {
-            axWindowsMediaPlayer1.URL = @"http://" + getVideoUrl;
+            axWindowsMediaPlayer1.URL = @"" + getVideoUrl;
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -125,7 +126,19 @@ namespace ViralizeDesktop
             this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
             this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
             var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-            ffMpeg.GetVideoThumbnail("http ://"+urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEE.jpg", 1);
+            ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEE.jpg", 1);
+
+
+            System.Net.WebClient Client = new System.Net.WebClient();
+
+            Client.Headers.Add("Content-Type", "binary/octet-stream");
+
+            byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
+                                              @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
+
+            string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+
+
         }
 
         private void rProp_Click(object sender, EventArgs e)
@@ -152,12 +165,16 @@ namespace ViralizeDesktop
         {
             panelRegistro.Hide();
             panelPropuestas.Show();
+            panelAdmin.Hide();
+
         }
 
         private void registroUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelPropuestas.Hide();
             panelRegistro.Show();
+            panelAdmin.Hide();
+            panelPropuestas.Hide();
         }
 
         private void crearUsuarioButton_Click(object sender, EventArgs e)
@@ -205,6 +222,25 @@ namespace ViralizeDesktop
             Byte[] EncryptedBytes = HashTool.ComputeHash(HashAsByte);
             HashTool.Clear();
             return Convert.ToBase64String(EncryptedBytes);
+        }
+
+        private void administracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelAdmin.Show();
+            panelPropuestas.Hide();
+            panelRegistro.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            gestionUsuarios gest = new gestionUsuarios();
+            gest.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            gestionRetos gRetos = new gestionRetos();
+            gRetos.Show();
         }
     } 
 }

@@ -47,6 +47,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.propuestasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPropuestas = new System.Windows.Forms.Panel();
             this.panelRegistro = new System.Windows.Forms.Panel();
             this.crearUsuarioButton = new System.Windows.Forms.Button();
@@ -63,6 +64,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelAdmin = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -70,6 +75,7 @@
             this.menuStrip1.SuspendLayout();
             this.panelPropuestas.SuspendLayout();
             this.panelRegistro.SuspendLayout();
+            this.panelAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -200,10 +206,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.propuestasToolStripMenuItem,
-            this.registroUsuariosToolStripMenuItem});
+            this.registroUsuariosToolStripMenuItem,
+            this.administracionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(824, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(789, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -220,6 +227,13 @@
             this.registroUsuariosToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
             this.registroUsuariosToolStripMenuItem.Text = "Registro usuarios";
             this.registroUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroUsuariosToolStripMenuItem_Click);
+            // 
+            // administracionToolStripMenuItem
+            // 
+            this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
+            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.administracionToolStripMenuItem.Text = "Administracion";
+            this.administracionToolStripMenuItem.Click += new System.EventHandler(this.administracionToolStripMenuItem_Click);
             // 
             // panelPropuestas
             // 
@@ -401,13 +415,62 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Registro:";
             // 
+            // panelAdmin
+            // 
+            this.panelAdmin.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
+            this.panelAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelAdmin.Controls.Add(this.button2);
+            this.panelAdmin.Controls.Add(this.button1);
+            this.panelAdmin.Controls.Add(this.label9);
+            this.panelAdmin.Location = new System.Drawing.Point(0, 27);
+            this.panelAdmin.Name = "panelAdmin";
+            this.panelAdmin.Size = new System.Drawing.Size(694, 306);
+            this.panelAdmin.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(291, 130);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 53);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Gestion retos";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(149, 130);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 53);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Gestion usuarios";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(18, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Administracion:";
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(824, 405);
+            this.ClientSize = new System.Drawing.Size(789, 409);
+            this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.panelRegistro);
             this.Controls.Add(this.panelPropuestas);
             this.Controls.Add(this.menuStrip1);
@@ -425,6 +488,8 @@
             this.panelPropuestas.PerformLayout();
             this.panelRegistro.ResumeLayout(false);
             this.panelRegistro.PerformLayout();
+            this.panelAdmin.ResumeLayout(false);
+            this.panelAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,5 +530,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem administracionToolStripMenuItem;
+        private System.Windows.Forms.Panel panelAdmin;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

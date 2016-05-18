@@ -68,6 +68,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionUsuarios.Designer.cs">
+      <DependentUpon>gestionUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="LOGRO.cs">
       <DependentUpon>ViralizeModel.tt</DependentUpon>
     </Compile>
@@ -192,6 +198,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VIRALIZEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VIRALIZEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VIRALIZEDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="ViralizeModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +221,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionUsuarios.resx">
+      <DependentUpon>gestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -247,6 +262,20 @@
     </None>
     <None Include="VIRALIZEDataSet.xss">
       <DependentUpon>VIRALIZEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VIRALIZEDataSet1.xsc">
+      <DependentUpon>VIRALIZEDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="VIRALIZEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VIRALIZEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="VIRALIZEDataSet1.xss">
+      <DependentUpon>VIRALIZEDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ViralizeModel.edmx.diagram">
       <DependentUpon>ViralizeModel.edmx</DependentUpon>
