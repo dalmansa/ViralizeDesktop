@@ -32,36 +32,51 @@ namespace ViralizeDesktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var query = from al in dataContext.RETOes
-                        where al.id == id
-                        select al;
-            foreach (var al in query)
+
+            if (dateTimeInicio.Value < dateTimeFinal.Value)
             {
-                al.titulo = txtTitulo.Text;
-                al.descripcion = txtDescripcion.Text;
-                al.fechaPublicacion = dateTimeInicio.Value;
-                al.fechaCaducidad = dateTimeFinal.Value;
-                al.urlVideo = txtURLVideo.Text;
-
-                if (checkActivo.Checked)
-                {
-                    al.activo = 1;
+                if (dateTimeFinal.Value < DateTime.Now) {
+                    checkActivo.Checked = false;
+                    MessageBox.Show("El reto se ha desactivado");
                 }
-                else
+                var query = from al in dataContext.RETOes
+                            where al.id == id
+                            select al;
+                foreach (var al in query)
                 {
+                    al.titulo = txtTitulo.Text;
+                    al.descripcion = txtDescripcion.Text;
+                    al.fechaPublicacion = dateTimeInicio.Value;
+                    al.fechaCaducidad = dateTimeFinal.Value;
+                    al.urlVideo = txtURLVideo.Text;
 
-                    al.activo = 0;
+                    if (checkActivo.Checked)
+                    {
+                        al.activo = 1;
+                    }
+                    else
+                    {
+
+                        al.activo = 0;
+                    }
+
+
+
                 }
+                dataContext.SaveChanges();
 
-                
+                this.rETOTableAdapter.Update(this.vIRALIZEDataSet2.RETO);
+                this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
 
+                MessageBox.Show("Reto modificado");
             }
-            dataContext.SaveChanges();
+            else {
+                MessageBox.Show("La fecha final no puede ser anterior a la de inicio.");
+                    }
 
-            this.rETOTableAdapter.Update(this.vIRALIZEDataSet2.RETO);
-            this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
+
+
            
-            MessageBox.Show("Reto modificado");
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

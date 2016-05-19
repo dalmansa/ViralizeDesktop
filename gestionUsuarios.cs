@@ -46,8 +46,8 @@ namespace ViralizeDesktop
             }
             dataContext.SaveChanges();
 
-            this.uSUARIOTableAdapter.Update(this.vIRALIZEDataSet1.USUARIO);
-            this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
+            this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+            this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
             MessageBox.Show("Usuario eliminado");
 
         }
@@ -124,8 +124,10 @@ namespace ViralizeDesktop
             }
             dataContext.SaveChanges();
 
-            this.uSUARIOTableAdapter.Update(this.vIRALIZEDataSet1.USUARIO);
-            this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
+            this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+            this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+
+            
             MessageBox.Show("Usuario modificado");
         }
 
