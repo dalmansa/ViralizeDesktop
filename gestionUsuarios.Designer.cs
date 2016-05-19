@@ -48,16 +48,21 @@
             this.checkAdmin = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkSuper = new System.Windows.Forms.CheckBox();
+            this.vIRALIZEDataSetUSUARIOS = new ViralizeDesktop.VIRALIZEDataSetUSUARIOS();
+            this.uSUARIOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.uSUARIOTableAdapter1 = new ViralizeDesktop.VIRALIZEDataSetUSUARIOSTableAdapters.USUARIOTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passw = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.superusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -83,10 +88,10 @@
             this.nombreDataGridViewTextBoxColumn,
             this.apellidosDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
+            this.passw,
             this.administradorDataGridViewTextBoxColumn,
             this.superusuarioDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.uSUARIOBindingSource;
+            this.dataGridView1.DataSource = this.uSUARIOBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(16, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -250,6 +255,20 @@
             this.checkSuper.TabIndex = 30;
             this.checkSuper.UseVisualStyleBackColor = true;
             // 
+            // vIRALIZEDataSetUSUARIOS
+            // 
+            this.vIRALIZEDataSetUSUARIOS.DataSetName = "VIRALIZEDataSetUSUARIOS";
+            this.vIRALIZEDataSetUSUARIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uSUARIOBindingSource1
+            // 
+            this.uSUARIOBindingSource1.DataMember = "USUARIO";
+            this.uSUARIOBindingSource1.DataSource = this.vIRALIZEDataSetUSUARIOS;
+            // 
+            // uSUARIOTableAdapter1
+            // 
+            this.uSUARIOTableAdapter1.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -278,12 +297,12 @@
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
             this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // passwordDataGridViewTextBoxColumn
+            // passw
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passw.DataPropertyName = "passw";
+            this.passw.HeaderText = "passw";
+            this.passw.Name = "passw";
+            this.passw.ReadOnly = true;
             // 
             // administradorDataGridViewTextBoxColumn
             // 
@@ -328,6 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,11 +375,14 @@
         private System.Windows.Forms.CheckBox checkAdmin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkSuper;
+        private VIRALIZEDataSetUSUARIOS vIRALIZEDataSetUSUARIOS;
+        private System.Windows.Forms.BindingSource uSUARIOBindingSource1;
+        private VIRALIZEDataSetUSUARIOSTableAdapters.USUARIOTableAdapter uSUARIOTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passw;
         private System.Windows.Forms.DataGridViewTextBoxColumn administradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn superusuarioDataGridViewTextBoxColumn;
     }

@@ -1,226 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="VIRALIZEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="LOGRO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="valor" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="USUARIO_LOGRO" Relationship="Self.FK_LOGRO_USUARIO" FromRole="LOGRO" ToRole="USUARIO_LOGRO" />
-  </EntityType>
-  <EntityType Name="LOGRO_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="logro_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="NIVEL">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_NIVEL" FromRole="NIVEL" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="NIVEL_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nivel_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="PLATAFORMA">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="RETOes" Relationship="Self.FK_RETO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="RETO" />
-    <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="PLATAFORMA_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="plataforma_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="PROPUESTA_RETO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="urlVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="usuarioID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_PROPUESTA_USUARIO" FromRole="PROPUESTA_RETO" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="RETO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="fechaCaducidad" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="urlVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="activo" Type="Byte" Nullable="false" />
-    <Property Name="usuarioID" Type="Int32" Nullable="false" />
-    <Property Name="plataformaID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="PLATAFORMA" Relationship="Self.FK_RETO_PLATAFORMA" FromRole="RETO" ToRole="PLATAFORMA" />
-    <NavigationProperty Name="SHAREs" Relationship="Self.FK_SHARE_RETO" FromRole="RETO" ToRole="SHARE" />
-    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_RETO_USUARIO" FromRole="RETO" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="RETO_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="reto_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="SHARE">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="urlVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="rating" Type="Int32" Nullable="false" />
-    <Property Name="usuarioID" Type="Int32" Nullable="false" />
-    <Property Name="retoID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="RETO" Relationship="Self.FK_SHARE_RETO" FromRole="SHARE" ToRole="RETO" />
-    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_SHARE_USUARIO" FromRole="SHARE" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="SHARE_BLOQUEADA">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="shareID" Type="Int32" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="SHARE_BLOQUEADA_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="share_bloqueada_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="USUARIO_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usuario_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="USUARIO_LOGRO">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usuarioID" Type="Int32" Nullable="false" />
-    <Property Name="logroID" Type="Int32" Nullable="false" />
-    <Property Name="fechaObtencion" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="LOGRO" Relationship="Self.FK_LOGRO_USUARIO" FromRole="USUARIO_LOGRO" ToRole="LOGRO" />
-    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_USUARIO_LOGRO" FromRole="USUARIO_LOGRO" ToRole="USUARIO" />
-  </EntityType>
-  <EntityType Name="USUARIO_LOGRO_LOG">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usuario_logro_id" Type="Int32" Nullable="false" />
-    <Property Name="op" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <Association Name="FK_LOGRO_USUARIO">
-    <End Role="LOGRO" Type="Self.LOGRO" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="USUARIO_LOGRO" Type="Self.USUARIO_LOGRO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="LOGRO">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="USUARIO_LOGRO">
-        <PropertyRef Name="logroID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RETO_PLATAFORMA">
-    <End Role="PLATAFORMA" Type="Self.PLATAFORMA" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="RETO" Type="Self.RETO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PLATAFORMA">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="RETO">
-        <PropertyRef Name="plataformaID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SHARE_RETO">
-    <End Role="RETO" Type="Self.RETO" Multiplicity="1" />
-    <End Role="SHARE" Type="Self.SHARE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RETO">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="SHARE">
-        <PropertyRef Name="retoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="VIRALIZEEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="LOGROes" EntityType="Self.LOGRO" />
-    <EntitySet Name="LOGRO_LOG" EntityType="Self.LOGRO_LOG" />
-    <EntitySet Name="NIVELs" EntityType="Self.NIVEL" />
-    <EntitySet Name="NIVEL_LOG" EntityType="Self.NIVEL_LOG" />
-    <EntitySet Name="PLATAFORMAs" EntityType="Self.PLATAFORMA" />
-    <EntitySet Name="PLATAFORMA_LOG" EntityType="Self.PLATAFORMA_LOG" />
-    <EntitySet Name="PROPUESTA_RETO" EntityType="Self.PROPUESTA_RETO" />
-    <EntitySet Name="RETOes" EntityType="Self.RETO" />
-    <EntitySet Name="RETO_LOG" EntityType="Self.RETO_LOG" />
-    <EntitySet Name="SHAREs" EntityType="Self.SHARE" />
-    <EntitySet Name="SHARE_BLOQUEADA" EntityType="Self.SHARE_BLOQUEADA" />
-    <EntitySet Name="SHARE_BLOQUEADA_LOG" EntityType="Self.SHARE_BLOQUEADA_LOG" />
-    <EntitySet Name="USUARIO_LOG" EntityType="Self.USUARIO_LOG" />
-    <EntitySet Name="USUARIO_LOGRO" EntityType="Self.USUARIO_LOGRO" />
-    <EntitySet Name="USUARIO_LOGRO_LOG" EntityType="Self.USUARIO_LOGRO_LOG" />
-    <AssociationSet Name="FK_LOGRO_USUARIO" Association="Self.FK_LOGRO_USUARIO">
-      <End Role="LOGRO" EntitySet="LOGROes" />
-      <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RETO_PLATAFORMA" Association="Self.FK_RETO_PLATAFORMA">
-      <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
-      <End Role="RETO" EntitySet="RETOes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SHARE_RETO" Association="Self.FK_SHARE_RETO">
-      <End Role="RETO" EntitySet="RETOes" />
-      <End Role="SHARE" EntitySet="SHAREs" />
-    </AssociationSet>
     <FunctionImport Name="spLogroLogDel" ReturnType="Collection(VIRALIZEModel.spLogroLogDel_Result)">
       <Parameter Name="first" Mode="In" Type="Int32" />
       <Parameter Name="last" Mode="In" Type="Int32" />
@@ -305,10 +85,34 @@
       <Parameter Name="first" Mode="In" Type="Int32" />
       <Parameter Name="last" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="LOGROes" EntityType="VIRALIZEModel.LOGRO" />
+    <EntitySet Name="LOGRO_LOG" EntityType="VIRALIZEModel.LOGRO_LOG" />
+    <EntitySet Name="NIVELs" EntityType="VIRALIZEModel.NIVEL" />
+    <EntitySet Name="NIVEL_LOG" EntityType="VIRALIZEModel.NIVEL_LOG" />
+    <EntitySet Name="PLATAFORMAs" EntityType="VIRALIZEModel.PLATAFORMA" />
+    <EntitySet Name="PLATAFORMA_LOG" EntityType="VIRALIZEModel.PLATAFORMA_LOG" />
+    <EntitySet Name="PROPUESTA_RETO" EntityType="VIRALIZEModel.PROPUESTA_RETO" />
+    <EntitySet Name="RETOes" EntityType="VIRALIZEModel.RETO" />
+    <EntitySet Name="RETO_LOG" EntityType="VIRALIZEModel.RETO_LOG" />
+    <EntitySet Name="SHAREs" EntityType="VIRALIZEModel.SHARE" />
+    <EntitySet Name="SHARE_BLOQUEADA" EntityType="VIRALIZEModel.SHARE_BLOQUEADA" />
+    <EntitySet Name="SHARE_BLOQUEADA_LOG" EntityType="VIRALIZEModel.SHARE_BLOQUEADA_LOG" />
+    <EntitySet Name="SHARE_LOG" EntityType="VIRALIZEModel.SHARE_LOG" />
     <EntitySet Name="USUARIOs" EntityType="VIRALIZEModel.USUARIO" />
+    <EntitySet Name="USUARIO_LOG" EntityType="VIRALIZEModel.USUARIO_LOG" />
+    <EntitySet Name="USUARIO_LOGRO" EntityType="VIRALIZEModel.USUARIO_LOGRO" />
+    <EntitySet Name="USUARIO_LOGRO_LOG" EntityType="VIRALIZEModel.USUARIO_LOGRO_LOG" />
+    <AssociationSet Name="FK_LOGRO_USUARIO" Association="VIRALIZEModel.FK_LOGRO_USUARIO">
+      <End Role="LOGRO" EntitySet="LOGROes" />
+      <End Role="USUARIO_LOGRO" EntitySet="USUARIO_LOGRO" />
+    </AssociationSet>
     <AssociationSet Name="FK_USUARIO_NIVEL" Association="VIRALIZEModel.FK_USUARIO_NIVEL">
       <End Role="NIVEL" EntitySet="NIVELs" />
       <End Role="USUARIO" EntitySet="USUARIOs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETO_PLATAFORMA" Association="VIRALIZEModel.FK_RETO_PLATAFORMA">
+      <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
+      <End Role="RETO" EntitySet="RETOes" />
     </AssociationSet>
     <AssociationSet Name="FK_USUARIO_PLATAFORMA" Association="VIRALIZEModel.FK_USUARIO_PLATAFORMA">
       <End Role="PLATAFORMA" EntitySet="PLATAFORMAs" />
@@ -321,6 +125,10 @@
     <AssociationSet Name="FK_RETO_USUARIO" Association="VIRALIZEModel.FK_RETO_USUARIO">
       <End Role="USUARIO" EntitySet="USUARIOs" />
       <End Role="RETO" EntitySet="RETOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHARE_RETO" Association="VIRALIZEModel.FK_SHARE_RETO">
+      <End Role="RETO" EntitySet="RETOes" />
+      <End Role="SHARE" EntitySet="SHAREs" />
     </AssociationSet>
     <AssociationSet Name="FK_SHARE_USUARIO" Association="VIRALIZEModel.FK_SHARE_USUARIO">
       <End Role="USUARIO" EntitySet="USUARIOs" />
@@ -469,6 +277,143 @@
     <Property Type="Int32" Name="nivelID" Nullable="true" />
     <Property Type="Int32" Name="plataformaID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="LOGRO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="valor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="USUARIO_LOGRO" Relationship="VIRALIZEModel.FK_LOGRO_USUARIO" FromRole="LOGRO" ToRole="USUARIO_LOGRO" />
+  </EntityType>
+  <EntityType Name="LOGRO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logro_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="NIVEL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_NIVEL" FromRole="NIVEL" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="NIVEL_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nivel_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PLATAFORMA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numVersion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RETOes" Relationship="VIRALIZEModel.FK_RETO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="RETO" />
+    <NavigationProperty Name="USUARIOs" Relationship="VIRALIZEModel.FK_USUARIO_PLATAFORMA" FromRole="PLATAFORMA" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="PLATAFORMA_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plataforma_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PROPUESTA_RETO">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="usuarioID" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="urlVideo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="urlThumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_PROPUESTA_USUARIO" FromRole="PROPUESTA_RETO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="RETO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaCaducidad" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="urlVideo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="urlThumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Int32" Nullable="false" />
+    <Property Name="usuarioID" Type="Int32" Nullable="false" />
+    <Property Name="plataformaID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PLATAFORMA" Relationship="VIRALIZEModel.FK_RETO_PLATAFORMA" FromRole="RETO" ToRole="PLATAFORMA" />
+    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_RETO_USUARIO" FromRole="RETO" ToRole="USUARIO" />
+    <NavigationProperty Name="SHAREs" Relationship="VIRALIZEModel.FK_SHARE_RETO" FromRole="RETO" ToRole="SHARE" />
+  </EntityType>
+  <EntityType Name="RETO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reto_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SHARE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fechaPublicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="urlVideo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="urlThumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rating" Type="Int32" Nullable="false" />
+    <Property Name="usuarioID" Type="Int32" Nullable="false" />
+    <Property Name="retoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RETO" Relationship="VIRALIZEModel.FK_SHARE_RETO" FromRole="SHARE" ToRole="RETO" />
+    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_SHARE_USUARIO" FromRole="SHARE" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="SHARE_BLOQUEADA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shareID" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SHARE_BLOQUEADA_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="share_bloqueada_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SHARE_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="share_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
   <EntityType Name="USUARIO">
     <Key>
       <PropertyRef Name="id" />
@@ -476,12 +421,12 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="passw" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="puntuacion" Type="Int32" />
     <Property Name="nivelID" Type="Int32" />
-    <Property Name="administrador" Type="Int32" />
-    <Property Name="superusuario" Type="Int32" />
+    <Property Name="administrador" Type="Int32" Nullable="false" />
+    <Property Name="superusuario" Type="Int32" Nullable="false" />
     <Property Name="plataformaID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="NIVEL" Relationship="VIRALIZEModel.FK_USUARIO_NIVEL" FromRole="USUARIO" ToRole="NIVEL" />
     <NavigationProperty Name="PLATAFORMA" Relationship="VIRALIZEModel.FK_USUARIO_PLATAFORMA" FromRole="USUARIO" ToRole="PLATAFORMA" />
@@ -490,6 +435,49 @@
     <NavigationProperty Name="SHAREs" Relationship="VIRALIZEModel.FK_SHARE_USUARIO" FromRole="USUARIO" ToRole="SHARE" />
     <NavigationProperty Name="USUARIO_LOGRO" Relationship="VIRALIZEModel.FK_USUARIO_LOGRO" FromRole="USUARIO" ToRole="USUARIO_LOGRO" />
   </EntityType>
+  <EntityType Name="USUARIO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="USUARIO_LOGRO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuarioID" Type="Int32" Nullable="false" />
+    <Property Name="logroID" Type="Int32" Nullable="false" />
+    <Property Name="fechaObtencion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="LOGRO" Relationship="VIRALIZEModel.FK_LOGRO_USUARIO" FromRole="USUARIO_LOGRO" ToRole="LOGRO" />
+    <NavigationProperty Name="USUARIO" Relationship="VIRALIZEModel.FK_USUARIO_LOGRO" FromRole="USUARIO_LOGRO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="USUARIO_LOGRO_LOG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_logro_id" Type="Int32" Nullable="false" />
+    <Property Name="op" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_LOGRO_USUARIO">
+    <End Type="VIRALIZEModel.LOGRO" Role="LOGRO" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="VIRALIZEModel.USUARIO_LOGRO" Role="USUARIO_LOGRO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGRO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="USUARIO_LOGRO">
+        <PropertyRef Name="logroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_USUARIO_NIVEL">
     <End Type="VIRALIZEModel.NIVEL" Role="NIVEL" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -501,6 +489,20 @@
       </Principal>
       <Dependent Role="USUARIO">
         <PropertyRef Name="nivelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETO_PLATAFORMA">
+    <End Type="VIRALIZEModel.PLATAFORMA" Role="PLATAFORMA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="VIRALIZEModel.RETO" Role="RETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLATAFORMA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RETO">
+        <PropertyRef Name="plataformaID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -539,6 +541,18 @@
       </Principal>
       <Dependent Role="RETO">
         <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHARE_RETO">
+    <End Type="VIRALIZEModel.RETO" Role="RETO" Multiplicity="1" />
+    <End Type="VIRALIZEModel.SHARE" Role="SHARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETO">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SHARE">
+        <PropertyRef Name="retoID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

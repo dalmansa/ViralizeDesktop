@@ -68,6 +68,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -419,6 +420,7 @@
             // 
             this.panelAdmin.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.panelAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelAdmin.Controls.Add(this.button3);
             this.panelAdmin.Controls.Add(this.button2);
             this.panelAdmin.Controls.Add(this.button1);
             this.panelAdmin.Controls.Add(this.label9);
@@ -462,6 +464,18 @@
             this.label9.Size = new System.Drawing.Size(117, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Administracion:";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(430, 130);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 53);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Estadisticas";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Propuestas
             // 
@@ -535,5 +549,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

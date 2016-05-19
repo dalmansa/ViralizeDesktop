@@ -17,6 +17,7 @@ namespace ViralizeDesktop
         public int id { get; set; }
         public System.DateTime fechaPublicacion { get; set; }
         public string urlVideo { get; set; }
+        public string urlThumbnail { get; set; }
         public int rating { get; set; }
         public int usuarioID { get; set; }
         public int retoID { get; set; }

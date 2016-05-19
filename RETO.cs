@@ -26,13 +26,14 @@ namespace ViralizeDesktop
         public System.DateTime fechaPublicacion { get; set; }
         public System.DateTime fechaCaducidad { get; set; }
         public string urlVideo { get; set; }
-        public byte activo { get; set; }
+        public string urlThumbnail { get; set; }
+        public int activo { get; set; }
         public int usuarioID { get; set; }
         public int plataformaID { get; set; }
     
         public virtual PLATAFORMA PLATAFORMA { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SHARE> SHAREs { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
     }
 }

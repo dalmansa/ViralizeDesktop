@@ -186,7 +186,7 @@ namespace ViralizeDesktop
             user.username = txtUsuario.Text;
 
             string hash = CreateSHAHash(txtPassword.Text, hashkey);
-            user.password = hash;
+            user.passw = hash;
 
             if (checkAdmin.Checked)
             {
@@ -241,6 +241,11 @@ namespace ViralizeDesktop
         {
             gestionRetos gRetos = new gestionRetos();
             gRetos.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     } 
 }

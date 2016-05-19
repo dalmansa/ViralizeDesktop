@@ -39,10 +39,11 @@ namespace ViralizeDesktop
         public virtual DbSet<SHARE> SHAREs { get; set; }
         public virtual DbSet<SHARE_BLOQUEADA> SHARE_BLOQUEADA { get; set; }
         public virtual DbSet<SHARE_BLOQUEADA_LOG> SHARE_BLOQUEADA_LOG { get; set; }
+        public virtual DbSet<SHARE_LOG> SHARE_LOG { get; set; }
+        public virtual DbSet<USUARIO> USUARIOs { get; set; }
         public virtual DbSet<USUARIO_LOG> USUARIO_LOG { get; set; }
         public virtual DbSet<USUARIO_LOGRO> USUARIO_LOGRO { get; set; }
         public virtual DbSet<USUARIO_LOGRO_LOG> USUARIO_LOGRO_LOG { get; set; }
-        public virtual DbSet<USUARIO> USUARIOs { get; set; }
     
         public virtual ObjectResult<spLogroLogDel_Result> spLogroLogDel(Nullable<int> first, Nullable<int> last)
         {

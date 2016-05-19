@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vIRALIZEDataSet2 = new ViralizeDesktop.VIRALIZEDataSet2();
-            this.rETOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rETOTableAdapter = new ViralizeDesktop.VIRALIZEDataSet2TableAdapters.RETOTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +40,9 @@
             this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plataformaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rETOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vIRALIZEDataSet2 = new ViralizeDesktop.VIRALIZEDataSet2();
+            this.rETOTableAdapter = new ViralizeDesktop.VIRALIZEDataSet2TableAdapters.RETOTableAdapter();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.checkActivo = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,8 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -97,20 +97,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(514, 166);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // vIRALIZEDataSet2
-            // 
-            this.vIRALIZEDataSet2.DataSetName = "VIRALIZEDataSet2";
-            this.vIRALIZEDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rETOBindingSource
-            // 
-            this.rETOBindingSource.DataMember = "RETO";
-            this.rETOBindingSource.DataSource = this.vIRALIZEDataSet2;
-            // 
-            // rETOTableAdapter
-            // 
-            this.rETOTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -174,6 +160,20 @@
             this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "plataformaID";
             this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
             this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rETOBindingSource
+            // 
+            this.rETOBindingSource.DataMember = "RETO";
+            this.rETOBindingSource.DataSource = this.vIRALIZEDataSet2;
+            // 
+            // vIRALIZEDataSet2
+            // 
+            this.vIRALIZEDataSet2.DataSetName = "VIRALIZEDataSet2";
+            this.vIRALIZEDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rETOTableAdapter
+            // 
+            this.rETOTableAdapter.ClearBeforeFill = true;
             // 
             // buttonUpdate
             // 
@@ -318,7 +318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(736, 412);
+            this.ClientSize = new System.Drawing.Size(756, 420);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.txtURLVideo);
             this.Controls.Add(this.label5);
@@ -339,8 +339,8 @@
             this.Text = "gestionRetos";
             this.Load += new System.EventHandler(this.gestionRetos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

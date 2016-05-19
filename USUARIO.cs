@@ -27,11 +27,11 @@ namespace ViralizeDesktop
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
+        public string passw { get; set; }
         public Nullable<int> puntuacion { get; set; }
         public Nullable<int> nivelID { get; set; }
-        public Nullable<int> administrador { get; set; }
-        public Nullable<int> superusuario { get; set; }
+        public int administrador { get; set; }
+        public int superusuario { get; set; }
         public int plataformaID { get; set; }
     
         public virtual NIVEL NIVEL { get; set; }

@@ -29,7 +29,7 @@ namespace ViralizeDesktop
             string hash = CreateSHAHash(txtPass.Text, hashkey);
 
             string query = (from c in dataContext.USUARIOs
-                            where c.username == txtUser.Text && c.password == hash && c.administrador == 1
+                            where c.username == txtUser.Text && c.passw == hash && c.administrador == 1
                             select c.username).FirstOrDefault();
             if (query != null)
             {

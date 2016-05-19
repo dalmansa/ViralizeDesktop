@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,7 +78,7 @@ namespace ViralizeDesktop
                 dateTimeFinal.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[4].Value);
                 txtURLVideo.Text = (string)dataGridView1.SelectedRows[0].Cells[5].Value;
                 activo = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[6].Value);
-                
+
 
 
                 if (activo == 1)
@@ -88,19 +89,34 @@ namespace ViralizeDesktop
                 {
                     checkActivo.Checked = false;
                 }
-                
 
+                bool paDentro = true;
                 var query = from al in dataContext.SHAREs
                             where al.retoID == id
                             select al;
+                ArrayList ar = new ArrayList();
                 foreach (var al in query)
                 {
-                    listView1.Items.Add(al.USUARIO.username);
-                       // dataGridView2.Rows.Add(al.USUARIO.username);
-                   //MessageBox.Show(al.USUARIO.username);
+                    foreach (SHARE a2l in ar)
+                    {
+                        if ((al.id != a2l.id) && (a2l.usuarioID == al.usuarioID))
+                        {
+                            paDentro = false;
+                        }
+                    }
+                    if (paDentro)
+                    {
+                        ar.Add(al);
+                    }
+                    // dataGridView2.Rows.Add(al.USUARIO.username);
+                    //MessageBox.Show(al.USUARIO.username);
 
                 }
-                
+                foreach (SHARE ac in ar)
+                {
+                    listView1.Items.Add(ac.USUARIO.username);
+                }
+
 
 
 
@@ -110,8 +126,8 @@ namespace ViralizeDesktop
 
         }
 
-      
 
-        
+
+
     }
 }

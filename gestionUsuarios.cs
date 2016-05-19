@@ -24,8 +24,10 @@ namespace ViralizeDesktop
 
         private void gestionUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vIRALIZEDataSetUSUARIOS.USUARIO' table. You can move, or remove it, as needed.
+            this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
             // TODO: This line of code loads data into the 'vIRALIZEDataSet1.USUARIO' table. You can move, or remove it, as needed.
-            this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
+            //this.uSUARIOTableAdapter.Fill(this.vIRALIZEDataSet1.USUARIO);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
 
@@ -100,7 +102,7 @@ namespace ViralizeDesktop
                 al.apellidos = txtApellidos.Text;
                 al.username = txtUsername.Text;
                 string hash = CreateSHAHash(txtPassword.Text, hashkey);
-                al.password = hash;
+                al.passw = hash;
 
                 if (checkAdmin.Checked)
                 {

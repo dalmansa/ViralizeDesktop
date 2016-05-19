@@ -23,7 +23,7 @@ namespace ViralizeDesktop
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public string version { get; set; }
+        public string numVersion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RETO> RETOes { get; set; }

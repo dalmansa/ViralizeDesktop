@@ -12,16 +12,11 @@ namespace ViralizeDesktop
     using System;
     using System.Collections.Generic;
     
-    public partial class PROPUESTA_RETO
+    public partial class SHARE_LOG
     {
         public int id { get; set; }
-        public string titulo { get; set; }
-        public string descripcion { get; set; }
-        public System.DateTime fechaPublicacion { get; set; }
-        public string urlVideo { get; set; }
-        public string urlThumbnail { get; set; }
-        public int usuarioID { get; set; }
-    
-        public virtual USUARIO USUARIO { get; set; }
+        public int share_id { get; set; }
+        public string op { get; set; }
+        public System.DateTime fecha { get; set; }
     }
 }
