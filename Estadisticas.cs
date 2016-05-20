@@ -64,41 +64,36 @@ namespace ViralizeDesktop
             DateTime inicio;
             DateTime final;
             int count = 0;
-            DateTime dt = new DateTime();
+            String dt = "";
 
             inicio = fechaInicio.Value;
             final = fechaFin.Value;
 
             var query = from fe in dataContext.SHAREs
+                        orderby fe.fechaPublicacion
                         group fe by fe.fechaPublicacion into g
                         select g;
             foreach (IGrouping<DateTime, SHARE> studentGroup in query)
             {
                 count = 0;
+                esReto = false;
                 foreach (SHARE fe in studentGroup)
                 {
+                    esReto = (fe.retoID == id);
                     if (fe.retoID == id)
                     {
                         esReto = true;
-                    }
-                    else
-                    {
-                        esReto = false;
-                    }
-
-                    
-                    if (Between(fe.fechaPublicacion, inicio, final))
-                    {
-                        if(esReto == true) {
-                            count = count + 1;
-                            dt = fe.fechaPublicacion;
+                        if (Between(fe.fechaPublicacion, inicio, final)) {
+                            MessageBox.Show(fe.fechaPublicacion.ToString());    
+                            count ++;
+                            dt = fe.fechaPublicacion.ToShortDateString();
                         }
                     }
                 }
-                if (esReto)
-                {
-                    chartFechas.Series["Shares"].Points.AddXY(dt.ToShortDateString(), count);
+                if (esReto) {
+                    chartFechas.Series["Shares"].Points.AddXY(dt, count);
                 }
+               
             }
         }
 
@@ -113,6 +108,7 @@ namespace ViralizeDesktop
             final = fechaFin.Value;
 
             var query = from fe in dataContext.SHAREs
+                        orderby fe.fechaPublicacion
                         group fe by fe.fechaPublicacion into g
                         select g;
             foreach (IGrouping<DateTime, SHARE> studentGroup in query)
@@ -134,7 +130,7 @@ namespace ViralizeDesktop
 
         public static bool Between(DateTime input, DateTime date1, DateTime date2)
         {
-            return (input > date1 && input < date2);
+            return (input >= date1 && input <= date2);
         }
 
 
