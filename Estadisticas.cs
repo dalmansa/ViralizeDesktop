@@ -13,6 +13,7 @@ namespace ViralizeDesktop
 {
     public partial class Estadisticas : Form
     {
+        int id;
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         public Estadisticas()
         {
@@ -21,8 +22,11 @@ namespace ViralizeDesktop
 
         private void Estadisticas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vIRALIZEDataSet3.RETO' table. You can move, or remove it, as needed.
+            this.rETOTableAdapter.Fill(this.vIRALIZEDataSet3.RETO);
             cargarChar1();
-            
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
 
         }
 
@@ -54,6 +58,50 @@ namespace ViralizeDesktop
             }
         }
 
+        private void cargarChar2Concreto()
+        {
+            Boolean esReto = false;
+            DateTime inicio;
+            DateTime final;
+            int count = 0;
+            DateTime dt = new DateTime();
+
+            inicio = fechaInicio.Value;
+            final = fechaFin.Value;
+
+            var query = from fe in dataContext.SHAREs
+                        group fe by fe.fechaPublicacion into g
+                        select g;
+            foreach (IGrouping<DateTime, SHARE> studentGroup in query)
+            {
+                count = 0;
+                foreach (SHARE fe in studentGroup)
+                {
+                    if (fe.retoID == id)
+                    {
+                        esReto = true;
+                    }
+                    else
+                    {
+                        esReto = false;
+                    }
+
+                    
+                    if (Between(fe.fechaPublicacion, inicio, final))
+                    {
+                        if(esReto == true) {
+                            count = count + 1;
+                            dt = fe.fechaPublicacion;
+                        }
+                    }
+                }
+                if (esReto)
+                {
+                    chartFechas.Series["Shares"].Points.AddXY(dt.ToShortDateString(), count);
+                }
+            }
+        }
+
         private void cargarChar2()
         {
             DateTime inicio;
@@ -67,7 +115,8 @@ namespace ViralizeDesktop
             var query = from fe in dataContext.SHAREs
                         group fe by fe.fechaPublicacion into g
                         select g;
-            foreach (IGrouping<DateTime, SHARE> studentGroup in query) {
+            foreach (IGrouping<DateTime, SHARE> studentGroup in query)
+            {
                 count = 0;
                 foreach (SHARE fe in studentGroup)
                 {
@@ -78,6 +127,7 @@ namespace ViralizeDesktop
 
                     }
                 }
+
                 chartFechas.Series["Shares"].Points.AddXY(dt.ToShortDateString(), count);
             }
         }
@@ -87,12 +137,33 @@ namespace ViralizeDesktop
             return (input > date1 && input < date2);
         }
 
-       
+
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             chartFechas.Series[0].Points.Clear();
             cargarChar2();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chartFechas.Series[0].Points.Clear();
+            MessageBox.Show(id.ToString());
+            cargarChar2Concreto();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount =
+                dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                
+            }
+
+            //MessageBox.Show(id.ToString());
         }
     }
 }

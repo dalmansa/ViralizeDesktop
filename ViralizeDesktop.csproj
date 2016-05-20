@@ -225,6 +225,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VIRALIZEDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VIRALIZEDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VIRALIZEDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VIRALIZEDataSetUSUARIOS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -319,6 +324,17 @@
     </None>
     <None Include="VIRALIZEDataSet2.xss">
       <DependentUpon>VIRALIZEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="VIRALIZEDataSet3.xsc">
+      <DependentUpon>VIRALIZEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="VIRALIZEDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VIRALIZEDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VIRALIZEDataSet3.xss">
+      <DependentUpon>VIRALIZEDataSet3.xsd</DependentUpon>
     </None>
     <None Include="VIRALIZEDataSetUSUARIOS.xsc">
       <DependentUpon>VIRALIZEDataSetUSUARIOS.xsd</DependentUpon>
