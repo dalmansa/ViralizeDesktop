@@ -138,6 +138,8 @@ namespace ViralizeDesktop
 
             string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
 
+            rProp.PerformClick();
+
 
         }
 
@@ -158,7 +160,7 @@ namespace ViralizeDesktop
 
 
 
-            MessageBox.Show("Denied");
+            MessageBox.Show("Propuesta eliminada");
         }
 
         private void propuestasToolStripMenuItem_Click(object sender, EventArgs e)

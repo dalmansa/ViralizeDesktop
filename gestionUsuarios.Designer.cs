@@ -31,6 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.superusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSUARIOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vIRALIZEDataSetUSUARIOS = new ViralizeDesktop.VIRALIZEDataSetUSUARIOS();
             this.uSUARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vIRALIZEDataSet1 = new ViralizeDesktop.VIRALIZEDataSet1();
             this.uSUARIOTableAdapter = new ViralizeDesktop.VIRALIZEDataSet1TableAdapters.USUARIOTableAdapter();
@@ -48,21 +57,12 @@
             this.checkAdmin = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkSuper = new System.Windows.Forms.CheckBox();
-            this.vIRALIZEDataSetUSUARIOS = new ViralizeDesktop.VIRALIZEDataSetUSUARIOS();
-            this.uSUARIOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.uSUARIOTableAdapter1 = new ViralizeDesktop.VIRALIZEDataSetUSUARIOSTableAdapters.USUARIOTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.superusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -98,6 +98,65 @@
             this.dataGridView1.Size = new System.Drawing.Size(606, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passw
+            // 
+            this.passw.DataPropertyName = "passw";
+            this.passw.HeaderText = "passw";
+            this.passw.Name = "passw";
+            this.passw.ReadOnly = true;
+            // 
+            // administradorDataGridViewTextBoxColumn
+            // 
+            this.administradorDataGridViewTextBoxColumn.DataPropertyName = "administrador";
+            this.administradorDataGridViewTextBoxColumn.HeaderText = "administrador";
+            this.administradorDataGridViewTextBoxColumn.Name = "administradorDataGridViewTextBoxColumn";
+            this.administradorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // superusuarioDataGridViewTextBoxColumn
+            // 
+            this.superusuarioDataGridViewTextBoxColumn.DataPropertyName = "superusuario";
+            this.superusuarioDataGridViewTextBoxColumn.HeaderText = "superusuario";
+            this.superusuarioDataGridViewTextBoxColumn.Name = "superusuarioDataGridViewTextBoxColumn";
+            this.superusuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uSUARIOBindingSource1
+            // 
+            this.uSUARIOBindingSource1.DataMember = "USUARIO";
+            this.uSUARIOBindingSource1.DataSource = this.vIRALIZEDataSetUSUARIOS;
+            // 
+            // vIRALIZEDataSetUSUARIOS
+            // 
+            this.vIRALIZEDataSetUSUARIOS.DataSetName = "VIRALIZEDataSetUSUARIOS";
+            this.vIRALIZEDataSetUSUARIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // uSUARIOBindingSource
             // 
@@ -255,68 +314,9 @@
             this.checkSuper.TabIndex = 30;
             this.checkSuper.UseVisualStyleBackColor = true;
             // 
-            // vIRALIZEDataSetUSUARIOS
-            // 
-            this.vIRALIZEDataSetUSUARIOS.DataSetName = "VIRALIZEDataSetUSUARIOS";
-            this.vIRALIZEDataSetUSUARIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uSUARIOBindingSource1
-            // 
-            this.uSUARIOBindingSource1.DataMember = "USUARIO";
-            this.uSUARIOBindingSource1.DataSource = this.vIRALIZEDataSetUSUARIOS;
-            // 
             // uSUARIOTableAdapter1
             // 
             this.uSUARIOTableAdapter1.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passw
-            // 
-            this.passw.DataPropertyName = "passw";
-            this.passw.HeaderText = "passw";
-            this.passw.Name = "passw";
-            this.passw.ReadOnly = true;
-            // 
-            // administradorDataGridViewTextBoxColumn
-            // 
-            this.administradorDataGridViewTextBoxColumn.DataPropertyName = "administrador";
-            this.administradorDataGridViewTextBoxColumn.HeaderText = "administrador";
-            this.administradorDataGridViewTextBoxColumn.Name = "administradorDataGridViewTextBoxColumn";
-            this.administradorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // superusuarioDataGridViewTextBoxColumn
-            // 
-            this.superusuarioDataGridViewTextBoxColumn.DataPropertyName = "superusuario";
-            this.superusuarioDataGridViewTextBoxColumn.HeaderText = "superusuario";
-            this.superusuarioDataGridViewTextBoxColumn.Name = "superusuarioDataGridViewTextBoxColumn";
-            this.superusuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gestionUsuarios
             // 
@@ -341,14 +341,15 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "gestionUsuarios";
             this.Text = "gestionUsuarios";
             this.Load += new System.EventHandler(this.gestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

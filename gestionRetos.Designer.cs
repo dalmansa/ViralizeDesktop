@@ -336,6 +336,7 @@
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "gestionRetos";
             this.Text = "gestionRetos";
             this.Load += new System.EventHandler(this.gestionRetos_Load);

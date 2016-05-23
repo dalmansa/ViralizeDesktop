@@ -488,6 +488,7 @@
             this.Controls.Add(this.panelRegistro);
             this.Controls.Add(this.panelPropuestas);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Propuestas";
             this.Text = "Propuestas";
