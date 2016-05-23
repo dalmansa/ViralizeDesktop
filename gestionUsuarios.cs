@@ -93,44 +93,79 @@ namespace ViralizeDesktop
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var query = from al in dataContext.USUARIOs
-                        where al.id == id
+
+            if (comprobarExistencia()==false)
+            {
+                var query = from al in dataContext.USUARIOs
+                            where al.id == id
+                            select al;
+                foreach (var al in query)
+                {
+                    al.nombre = txtNombre.Text;
+                    al.apellidos = txtApellidos.Text;
+                    al.username = txtUsername.Text;
+
+                    if (txtPassword.Text != dataGridView1.SelectedRows[0].Cells[4].Value.ToString())
+                    {
+                        MessageBox.Show("La contraseña es distinta. Se va a actualizar.");
+                        string hash = CreateSHAHash(txtPassword.Text, hashkey);
+                        al.passw = hash;
+                    }
+
+                    if (checkAdmin.Checked)
+                    {
+                        al.administrador = 1;
+                    }
+                    else
+                    {
+
+                        al.administrador = 0;
+                    }
+
+                    if (checkSuper.Checked)
+                    {
+                        al.superusuario = 1;
+                    }
+                    else
+                    {
+                        al.superusuario = 0;
+                    }
+
+                }
+                dataContext.SaveChanges();
+
+                this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+                this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+
+
+                MessageBox.Show("Usuario modificado");
+            }
+            else {
+                MessageBox.Show("Username ya existe");
+            }
+
+            
+        }
+
+
+        private  Boolean comprobarExistencia() {
+            Boolean existe = false;
+
+            var query = from al in dataContext.USUARIOs 
                         select al;
             foreach (var al in query)
             {
-                al.nombre = txtNombre.Text;
-                al.apellidos = txtApellidos.Text;
-                al.username = txtUsername.Text;
-                string hash = CreateSHAHash(txtPassword.Text, hashkey);
-                al.passw = hash;
-
-                if (checkAdmin.Checked)
+                if (al.username == txtUsername.Text && al.id != id)
                 {
-                    al.administrador = 1;
+                    existe = true;
+                    break;
                 }
                 else {
-
-                    al.administrador = 0;
+                    existe = false;
                 }
-
-                if (checkSuper.Checked)
-                {
-                    al.superusuario = 1;
-                }
-                else {
-                    al.superusuario = 0;
-                }
-
             }
-            dataContext.SaveChanges();
-
-            this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
-            this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
-
-            
-            MessageBox.Show("Usuario modificado");
-        }
-
+            return existe;
+            }
 
         public static string CreateSHAHash(string Text, string Salt)
         {

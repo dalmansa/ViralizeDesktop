@@ -179,40 +179,71 @@ namespace ViralizeDesktop
 
         private void crearUsuarioButton_Click(object sender, EventArgs e)
         {
-            USUARIO user = new USUARIO();
 
-            user.nombre = txtNombre.Text;
-            user.apellidos = txtApellidos.Text;
-            user.username = txtUsuario.Text;
-
-            string hash = CreateSHAHash(txtPassword.Text, hashkey);
-            user.passw = hash;
-
-            if (checkAdmin.Checked)
+            if (comprobarExistencia() == false)
             {
-                user.administrador = 1;
-            }
-            else
-            {
-                user.administrador = 0;
-            }
+                USUARIO user = new USUARIO();
 
-            if (checkSuper.Checked)
-            {
-                user.superusuario = 1;
+                user.nombre = txtNombre.Text;
+                user.apellidos = txtApellidos.Text;
+                user.username = txtUsuario.Text;
+
+                string hash = CreateSHAHash(txtPassword.Text, hashkey);
+                user.passw = hash;
+
+                if (checkAdmin.Checked)
+                {
+                    user.administrador = 1;
+                }
+                else
+                {
+                    user.administrador = 0;
+                }
+
+                if (checkSuper.Checked)
+                {
+                    user.superusuario = 1;
+                }
+                else
+                {
+                    user.superusuario = 0;
+                }
+
+                user.plataformaID = 1;
+
+                dataContext.USUARIOs.Add(user);
+                dataContext.SaveChanges();
+                MessageBox.Show("Usuario creado");
+                MessageBox.Show(hash);
             }
             else {
-                user.superusuario = 0;
+                MessageBox.Show("Username ya existe");
             }
 
-            user.plataformaID = 1;
-
-            dataContext.USUARIOs.Add(user);
-            dataContext.SaveChanges();
-            MessageBox.Show("Usuario creado");
-            MessageBox.Show(hash);
+            
 
 
+        }
+
+        private Boolean comprobarExistencia()
+        {
+            Boolean existe = false;
+
+            var query = from al in dataContext.USUARIOs
+                        select al;
+            foreach (var al in query)
+            {
+                if (al.username == txtUsername.Text && al.id != id)
+                {
+                    existe = true;
+                    break;
+                }
+                else
+                {
+                    existe = false;
+                }
+            }
+            return existe;
         }
 
         public static string CreateSHAHash(string Text, string Salt)
