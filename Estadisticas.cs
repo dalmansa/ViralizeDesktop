@@ -79,7 +79,7 @@ namespace ViralizeDesktop
                 esReto = false;
                 foreach (SHARE fe in studentGroup)
                 {
-                    esReto = (fe.retoID == id);
+                   // esReto = (fe.retoID == id);
                     if (fe.retoID == id)
                     {
                         esReto = true;
@@ -91,6 +91,7 @@ namespace ViralizeDesktop
                     }
                 }
                 if (esReto) {
+                    MessageBox.Show("ENTRA");
                     chartFechas.Series["Shares"].Points.AddXY(dt, count);
                 }
                
