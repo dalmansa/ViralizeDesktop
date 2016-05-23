@@ -82,8 +82,9 @@ namespace ViralizeDesktop
                    // esReto = (fe.retoID == id);
                     if (fe.retoID == id)
                     {
-                        esReto = true;
+                        
                         if (Between(fe.fechaPublicacion, inicio, final)) {
+                            esReto = true;
                             MessageBox.Show(fe.fechaPublicacion.ToString());    
                             count ++;
                             dt = fe.fechaPublicacion.ToShortDateString();
