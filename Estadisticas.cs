@@ -161,5 +161,53 @@ namespace ViralizeDesktop
 
             //MessageBox.Show(id.ToString());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chartShares.Series[0].Points.Clear();
+
+            DateTime inicio;
+            DateTime final;
+            inicio = fechaInicio2.Value;
+            final = fechaFinal2.Value;
+            Boolean entreFechas = false;
+
+            String nombreReto;
+            int countShares = 0;
+
+            var groupJoinQuery =
+                from retos in dataContext.RETOes
+                join shares in dataContext.SHAREs on retos.id equals shares.retoID into sharesGrup
+                select new
+                {
+                    Reto = retos.titulo,
+                    Shars = from share2 in sharesGrup
+                            select share2
+                };
+
+            foreach (var sharesGrup in groupJoinQuery)
+            {
+                countShares = 0;
+                nombreReto = sharesGrup.Reto;
+                foreach (var shareItem in sharesGrup.Shars)
+                {
+                    if (Between(shareItem.RETO.fechaPublicacion, inicio, final))
+                    {
+                        countShares = countShares + 1;
+                        entreFechas = true;
+                    }
+                    else {
+                        entreFechas = false;
+                    }
+                        
+                }
+                if (entreFechas) {
+                    chartShares.Series["Shares"].Points.AddXY(nombreReto, countShares);
+                }
+                    
+            }
+
+
+        }
     }
 }
