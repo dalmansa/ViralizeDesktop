@@ -125,18 +125,18 @@ namespace ViralizeDesktop
             MessageBox.Show("Accepted");
             this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
             this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
-            var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-            ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEE.jpg", 1);
+            //var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+            //ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEEE.jpg", 1);
 
 
-            System.Net.WebClient Client = new System.Net.WebClient();
+            //System.Net.WebClient Client = new System.Net.WebClient();
 
-            Client.Headers.Add("Content-Type", "binary/octet-stream");
+            //Client.Headers.Add("Content-Type", "binary/octet-stream");
 
-            byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
-                                              @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
+            //byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
+            //                                  @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
 
-            string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+            //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
 
             rProp.PerformClick();
 
@@ -280,6 +280,11 @@ namespace ViralizeDesktop
         {
             Estadisticas est = new Estadisticas();
             est.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     } 
 }

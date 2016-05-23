@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionUsuarios));
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.checkSuper = new System.Windows.Forms.CheckBox();
             this.uSUARIOTableAdapter1 = new ViralizeDesktop.VIRALIZEDataSetUSUARIOSTableAdapters.USUARIOTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).BeginInit();
@@ -175,7 +177,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(16, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 53);
@@ -187,7 +191,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(254, 387);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 53);
@@ -318,6 +324,20 @@
             // 
             this.uSUARIOTableAdapter1.ClearBeforeFill = true;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Location = new System.Drawing.Point(587, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // gestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +345,7 @@
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 491);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.checkSuper);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkAdmin);
@@ -342,6 +363,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "gestionUsuarios";
             this.Text = "gestionUsuarios";
             this.Load += new System.EventHandler(this.gestionUsuarios_Load);
@@ -386,5 +408,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passw;
         private System.Windows.Forms.DataGridViewTextBoxColumn administradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn superusuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button4;
     }
 }

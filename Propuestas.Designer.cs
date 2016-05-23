@@ -69,6 +69,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -182,7 +183,9 @@
             // aProp
             // 
             this.aProp.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.aProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aProp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.aProp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aProp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.aProp.Location = new System.Drawing.Point(246, 302);
             this.aProp.Name = "aProp";
             this.aProp.Size = new System.Drawing.Size(120, 53);
@@ -194,7 +197,9 @@
             // rProp
             // 
             this.rProp.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.rProp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rProp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rProp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rProp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rProp.Location = new System.Drawing.Point(93, 302);
             this.rProp.Name = "rProp";
             this.rProp.Size = new System.Drawing.Size(120, 53);
@@ -276,7 +281,9 @@
             // crearUsuarioButton
             // 
             this.crearUsuarioButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.crearUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crearUsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.crearUsuarioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crearUsuarioButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.crearUsuarioButton.Location = new System.Drawing.Point(181, 269);
             this.crearUsuarioButton.Name = "crearUsuarioButton";
             this.crearUsuarioButton.Size = new System.Drawing.Size(120, 53);
@@ -432,7 +439,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Location = new System.Drawing.Point(430, 130);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 53);
@@ -444,7 +453,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(291, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 53);
@@ -456,7 +467,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(149, 130);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 53);
@@ -477,6 +490,20 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Administracion:";
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Location = new System.Drawing.Point(700, 27);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,11 +511,13 @@
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 409);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.panelRegistro);
             this.Controls.Add(this.panelPropuestas);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Propuestas";
             this.Text = "Propuestas";
@@ -551,5 +580,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

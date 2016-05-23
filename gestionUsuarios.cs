@@ -175,5 +175,10 @@ namespace ViralizeDesktop
             HashTool.Clear();
             return Convert.ToBase64String(EncryptedBytes);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
