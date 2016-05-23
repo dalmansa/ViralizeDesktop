@@ -233,7 +233,7 @@ namespace ViralizeDesktop
                         select al;
             foreach (var al in query)
             {
-                if (al.username == txtUsername.Text && al.id != id)
+                if (al.username == txtUsuario.Text && al.id != id)
                 {
                     existe = true;
                     break;
