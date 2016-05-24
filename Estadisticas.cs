@@ -143,16 +143,30 @@ namespace ViralizeDesktop
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            chartFechas.Series[0].Points.Clear();
-            cargarChar2();
+            if (fechaFin.Value > fechaInicio.Value)
+            {
+                chartFechas.Series[0].Points.Clear();
+                cargarChar2();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
+            }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            chartFechas.Series[0].Points.Clear();
+            if (fechaFin.Value > fechaInicio.Value)
+            {
+                chartFechas.Series[0].Points.Clear();
             MessageBox.Show(id.ToString());
             cargarChar2Concreto();
+            }
+            else
+            {
+                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
+            }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -170,49 +184,56 @@ namespace ViralizeDesktop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            chartShares.Series[0].Points.Clear();
-
-            DateTime inicio;
-            DateTime final;
-            inicio = fechaInicio2.Value;
-            final = fechaFinal2.Value;
-            Boolean entreFechas = false;
-
-            String nombreReto;
-            int countShares = 0;
-
-            var groupJoinQuery =
-                from retos in dataContext.RETOes
-                join shares in dataContext.SHAREs on retos.id equals shares.retoID into sharesGrup
-                select new
-                {
-                    Reto = retos.titulo,
-                    Shars = from share2 in sharesGrup
-                            select share2
-                };
-
-            foreach (var sharesGrup in groupJoinQuery)
+            if (fechaFinal2.Value > fechaInicio2.Value)
             {
-                countShares = 0;
-                nombreReto = sharesGrup.Reto;
-                foreach (var shareItem in sharesGrup.Shars)
-                {
-                    if (Between(shareItem.RETO.fechaPublicacion, inicio, final))
-                    {
-                        countShares = countShares + 1;
-                        entreFechas = true;
-                    }
-                    else {
-                        entreFechas = false;
-                    }
-                        
-                }
-                if (entreFechas) {
-                    chartShares.Series["Shares"].Points.AddXY(nombreReto, countShares);
-                }
-                    
-            }
+                chartShares.Series[0].Points.Clear();
 
+                DateTime inicio;
+                DateTime final;
+                inicio = fechaInicio2.Value;
+                final = fechaFinal2.Value;
+                Boolean entreFechas = false;
+
+                String nombreReto;
+                int countShares = 0;
+
+                var groupJoinQuery =
+                    from retos in dataContext.RETOes
+                    join shares in dataContext.SHAREs on retos.id equals shares.retoID into sharesGrup
+                    select new
+                    {
+                        Reto = retos.titulo,
+                        Shars = from share2 in sharesGrup
+                                select share2
+                    };
+
+                foreach (var sharesGrup in groupJoinQuery)
+                {
+                    countShares = 0;
+                    nombreReto = sharesGrup.Reto;
+                    foreach (var shareItem in sharesGrup.Shars)
+                    {
+                        if (Between(shareItem.RETO.fechaPublicacion, inicio, final))
+                        {
+                            countShares = countShares + 1;
+                            entreFechas = true;
+                        }
+                        else {
+                            entreFechas = false;
+                        }
+
+                    }
+                    if (entreFechas)
+                    {
+                        chartShares.Series["Shares"].Points.AddXY(nombreReto, countShares);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
+            }
 
         }
 

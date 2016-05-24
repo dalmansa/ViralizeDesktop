@@ -26,7 +26,7 @@ namespace ViralizeDesktop
 
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         string getVideoUrl = "";
-        int id;
+        int id=0;
 
         String errorBlancos;
 
@@ -124,75 +124,91 @@ namespace ViralizeDesktop
 
         private void aProp_Click(object sender, EventArgs e)
         {
-            var query =
+
+
+            if (id != 0)
+            {
+                var query =
                 from al in dataContext.PROPUESTA_RETO
                 where al.id == id
                 select al;
 
-            foreach (var al in query)
-            {
-                titulo = al.titulo;
-                descripcion = al.descripcion;
-                fechaPublicacion = al.fechaPublicacion;
-                urlVideo = al.urlVideo;
-                usuarioId = al.usuarioID;
+                foreach (var al in query)
+                {
+                    titulo = al.titulo;
+                    descripcion = al.descripcion;
+                    fechaPublicacion = al.fechaPublicacion;
+                    urlVideo = al.urlVideo;
+                    usuarioId = al.usuarioID;
 
+                }
+
+
+                RETO reto = new RETO();
+
+                reto.titulo = titulo;
+                reto.descripcion = descripcion;
+                reto.fechaPublicacion = fechaPublicacion;
+                reto.urlVideo = urlVideo;
+                reto.usuarioID = usuarioId;
+                reto.activo = 1;
+                reto.plataformaID = 1;
+
+                reto.fechaCaducidad = DateTime.Now.AddDays(31);
+
+                dataContext.RETOes.Add(reto);
+                dataContext.SaveChanges();
+                MessageBox.Show("Accepted");
+                this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+                this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
+                //var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+                //ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEEE.jpg", 1);
+
+
+                //System.Net.WebClient Client = new System.Net.WebClient();
+
+                //Client.Headers.Add("Content-Type", "binary/octet-stream");
+
+                //byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
+                //                                  @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
+
+                //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+
+                rProp.PerformClick();
             }
-
-
-            RETO reto = new RETO();
-
-            reto.titulo = titulo;
-            reto.descripcion = descripcion;
-            reto.fechaPublicacion = fechaPublicacion;
-            reto.urlVideo = urlVideo;
-            reto.usuarioID = usuarioId;
-            reto.activo = 1;
-            reto.plataformaID = 1;
-
-            reto.fechaCaducidad = DateTime.Now.AddDays(31);
-
-            dataContext.RETOes.Add(reto);
-            dataContext.SaveChanges();
-            MessageBox.Show("Accepted");
-            this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
-            this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
-            //var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-            //ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEEE.jpg", 1);
-
-
-            //System.Net.WebClient Client = new System.Net.WebClient();
-
-            //Client.Headers.Add("Content-Type", "binary/octet-stream");
-
-            //byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
-            //                                  @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
-
-            //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
-
-            rProp.PerformClick();
-
+            else
+            {
+                MessageBox.Show("Debes seleccionar una propuesta a aceptar previamente.");
+            }
 
         }
 
         private void rProp_Click(object sender, EventArgs e)
         {
-            var query = from al in dataContext.PROPUESTA_RETO
-                        where al.id == id
-                        select al;
-            foreach (var al in query)
+
+            if (id != 0)
             {
-                dataContext.PROPUESTA_RETO.Remove(al);
+                var query = from al in dataContext.PROPUESTA_RETO
+                            where al.id == id
+                            select al;
+                foreach (var al in query)
+                {
+                    dataContext.PROPUESTA_RETO.Remove(al);
 
+                }
+                dataContext.SaveChanges();
+
+                this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+                this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
+
+
+
+                MessageBox.Show("Propuesta eliminada");
             }
-            dataContext.SaveChanges();
-
-            this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
-            this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
-
-
-
-            MessageBox.Show("Propuesta eliminada");
+            else
+            {
+                MessageBox.Show("Debes seleccionar una propuesta a eliminar previamente.");
+            }
         }
 
         private void propuestasToolStripMenuItem_Click(object sender, EventArgs e)

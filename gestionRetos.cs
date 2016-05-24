@@ -34,50 +34,90 @@ namespace ViralizeDesktop
             dataGridView1.MultiSelect = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private Boolean comprobarBlancos()
         {
-
-            if (dateTimeInicio.Value < dateTimeFinal.Value)
+            Boolean esBlanco = false;
+            if (txtTitulo.Text == "")
             {
-                if (dateTimeFinal.Value < DateTime.Now) {
-                    checkActivo.Checked = false;
-                    MessageBox.Show("El reto se ha desactivado");
-                }
-                var query = from al in dataContext.RETOes
-                            where al.id == id
-                            select al;
-                foreach (var al in query)
-                {
-                    al.titulo = txtTitulo.Text;
-                    al.descripcion = txtDescripcion.Text;
-                    al.fechaPublicacion = dateTimeInicio.Value;
-                    al.fechaCaducidad = dateTimeFinal.Value;
-                    al.urlVideo = txtURLVideo.Text;
-
-                    if (checkActivo.Checked)
-                    {
-                        al.activo = 1;
-                    }
-                    else
-                    {
-
-                        al.activo = 0;
-                    }
-
-
-
-                }
-                dataContext.SaveChanges();
-
-                this.rETOTableAdapter.Update(this.vIRALIZEDataSet2.RETO);
-                this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
-
-                MessageBox.Show("Reto modificado");
+                esBlanco = true;
+                MessageBox.Show("Título no puede estar en blanco.");
+            }
+            else if (txtDescripcion.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show("Descripción no puede estar en blanco.");
+            }
+            else if (txtURLVideo.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show("URL Video no puede estar en blanco.");
+            }else if (dateTimeFinal.Value < dateTimeInicio.Value)
+            {
+                esBlanco = true;
+                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
             }
             else {
-                MessageBox.Show("La fecha final no puede ser anterior a la de inicio.");
-                    }
+                esBlanco = false;
+            }
+            return esBlanco;
+        }
 
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (id != 0)
+            {
+                if (comprobarBlancos() == false)
+                {
+                    if (dateTimeInicio.Value < dateTimeFinal.Value)
+                    {
+                        if (dateTimeFinal.Value < DateTime.Now)
+                        {
+                            checkActivo.Checked = false;
+                            MessageBox.Show("El reto se ha desactivado");
+                        }
+                        var query = from al in dataContext.RETOes
+                                    where al.id == id
+                                    select al;
+                        foreach (var al in query)
+                        {
+                            al.titulo = txtTitulo.Text;
+                            al.descripcion = txtDescripcion.Text;
+                            al.fechaPublicacion = dateTimeInicio.Value;
+                            al.fechaCaducidad = dateTimeFinal.Value;
+                            al.urlVideo = txtURLVideo.Text;
+
+                            if (checkActivo.Checked)
+                            {
+                                al.activo = 1;
+                            }
+                            else
+                            {
+
+                                al.activo = 0;
+                            }
+
+
+
+                        }
+                        dataContext.SaveChanges();
+
+                        this.rETOTableAdapter.Update(this.vIRALIZEDataSet2.RETO);
+                        this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
+
+                        MessageBox.Show("Reto modificado");
+                    }
+                    else {
+                        MessageBox.Show("La fecha final no puede ser anterior a la de inicio.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No has seleccionado ningún reto.");
+            }
 
 
            

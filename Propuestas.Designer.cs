@@ -536,7 +536,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Propuestas";
-            this.Text = "Propuestas";
+            this.Text = "Panel principal";
             this.Load += new System.EventHandler(this.Propuestas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).EndInit();

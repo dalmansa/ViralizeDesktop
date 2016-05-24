@@ -94,58 +94,96 @@ namespace ViralizeDesktop
 
         }
 
+        private Boolean comprobarBlancos()
+        {
+            Boolean esBlanco = false;
+            if (txtNombre.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show ("Nombre no puede estar en blanco.");
+            }
+            else if (txtApellidos.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show ("Apellido no puede estar en blanco.");
+            }
+            else if (txtUsername.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show ("Usuario no puede estar en blanco.");
+            }
+            else if (txtPassword.Text == "")
+            {
+                esBlanco = true;
+                MessageBox.Show  ("Contraseña no puede estar en blanco.");
+            }
+            else {
+                esBlanco = false;
+            }
+            return esBlanco;
+        }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
-            if (comprobarExistencia()==false)
+            if (id != 0)
             {
-                var query = from al in dataContext.USUARIOs
-                            where al.id == id
-                            select al;
-                foreach (var al in query)
+                if (comprobarExistencia() == false && comprobarBlancos() == false)
                 {
-                    al.nombre = txtNombre.Text;
-                    al.apellidos = txtApellidos.Text;
-                    al.username = txtUsername.Text;
-
-                    if (txtPassword.Text != dataGridView1.SelectedRows[0].Cells[4].Value.ToString())
+                    var query = from al in dataContext.USUARIOs
+                                where al.id == id
+                                select al;
+                    foreach (var al in query)
                     {
-                        MessageBox.Show("La contraseña es distinta. Se va a actualizar.");
-                        string hash = CreateSHAHash(txtPassword.Text, hashkey);
-                        al.passw = hash;
-                    }
+                        al.nombre = txtNombre.Text;
+                        al.apellidos = txtApellidos.Text;
+                        al.username = txtUsername.Text;
 
-                    if (checkAdmin.Checked)
-                    {
-                        al.administrador = 1;
-                    }
-                    else
-                    {
+                        if (txtPassword.Text != dataGridView1.SelectedRows[0].Cells[4].Value.ToString())
+                        {
+                            MessageBox.Show("La contraseña es distinta. Se va a actualizar.");
+                            string hash = CreateSHAHash(txtPassword.Text, hashkey);
+                            al.passw = hash;
+                        }
 
-                        al.administrador = 0;
-                    }
+                        if (checkAdmin.Checked)
+                        {
+                            al.administrador = 1;
+                        }
+                        else
+                        {
 
-                    if (checkSuper.Checked)
-                    {
-                        al.superusuario = 1;
-                    }
-                    else
-                    {
-                        al.superusuario = 0;
-                    }
+                            al.administrador = 0;
+                        }
 
+                        if (checkSuper.Checked)
+                        {
+                            al.superusuario = 1;
+                        }
+                        else
+                        {
+                            al.superusuario = 0;
+                        }
+
+                    }
+                    dataContext.SaveChanges();
+
+                    this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+                    this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
+
+
+                    MessageBox.Show("Usuario modificado.");
                 }
-                dataContext.SaveChanges();
-
-                this.uSUARIOTableAdapter1.Update(this.vIRALIZEDataSetUSUARIOS.USUARIO);
-                this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
-
-
-                MessageBox.Show("Usuario modificado");
+                else {
+                    if (comprobarExistencia() == true)
+                    {
+                        MessageBox.Show("Usuario ya existe.");
+                    }
+                }
             }
-            else {
-                MessageBox.Show("Username ya existe");
+            else
+            {
+                MessageBox.Show("No has seleccionado ningún usuario.");
             }
 
             
