@@ -52,14 +52,14 @@ namespace ViralizeDesktop
                 UsernameIniciated = txtUser.Text;
                 using (Propuestas form2 = new Propuestas())
                 {
-                    form2.Logged = "Logged as: "+usernameIniciated+"(admin)";
+                    form2.Logged = "Sesión iniciada como: "+usernameIniciated+"(admin)";
                     form2.ShowDialog();
                 }
                 //Propuestas prop = new Propuestas();
                 //prop.ShowDialog();
             }
             else
-                MessageBox.Show("Login incorrect");
+                MessageBox.Show("Usuario/contraseña incorrectas");
 
         }
 

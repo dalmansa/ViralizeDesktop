@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
             this.label9 = new System.Windows.Forms.Label();
             this.chartShares = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -86,53 +86,53 @@
             this.chartShares.BackColor = System.Drawing.Color.LightSeaGreen;
             this.chartShares.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartShares.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartShares.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartShares.Legends.Add(legend3);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartShares.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartShares.Legends.Add(legend1);
             this.chartShares.Location = new System.Drawing.Point(16, 67);
             this.chartShares.Name = "chartShares";
             this.chartShares.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.LabelForeColor = System.Drawing.Color.White;
-            series3.Legend = "Legend1";
-            series3.Name = "Shares";
-            this.chartShares.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Shares";
+            this.chartShares.Series.Add(series1);
             this.chartShares.Size = new System.Drawing.Size(302, 216);
             this.chartShares.TabIndex = 6;
             this.chartShares.Text = "chart1";
-            title3.Name = "Retos";
-            this.chartShares.Titles.Add(title3);
+            title1.Name = "Retos";
+            this.chartShares.Titles.Add(title1);
             // 
             // chartFechas
             // 
             this.chartFechas.BackColor = System.Drawing.Color.LightSeaGreen;
             this.chartFechas.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartFechas.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            chartArea4.Name = "ChartArea1";
-            this.chartFechas.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartFechas.Legends.Add(legend4);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartFechas.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFechas.Legends.Add(legend2);
             this.chartFechas.Location = new System.Drawing.Point(339, 67);
             this.chartFechas.Name = "chartFechas";
             this.chartFechas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.LabelForeColor = System.Drawing.Color.White;
-            series4.Legend = "Legend1";
-            series4.Name = "Shares";
-            this.chartFechas.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Shares";
+            this.chartFechas.Series.Add(series2);
             this.chartFechas.Size = new System.Drawing.Size(302, 216);
             this.chartFechas.TabIndex = 7;
             this.chartFechas.Text = "chart1";
-            title4.Name = "Retos";
-            this.chartFechas.Titles.Add(title4);
+            title2.Name = "Retos";
+            this.chartFechas.Titles.Add(title2);
             // 
             // fechaInicio
             // 
@@ -154,7 +154,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(320, 301);
+            this.label1.Location = new System.Drawing.Point(335, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 10;
@@ -166,7 +166,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(320, 321);
+            this.label2.Location = new System.Drawing.Point(335, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 11;
@@ -342,9 +342,9 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Location = new System.Drawing.Point(809, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.Size = new System.Drawing.Size(85, 34);
             this.button4.TabIndex = 32;
-            this.button4.Text = "Logout";
+            this.button4.Text = "Cerrar sesión";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

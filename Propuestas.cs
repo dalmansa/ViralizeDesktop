@@ -62,6 +62,7 @@ namespace ViralizeDesktop
 
         private void Propuestas_Load(object sender, EventArgs e)
         {
+            label6.Text = "Contraseña:";
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
 
@@ -251,7 +252,7 @@ namespace ViralizeDesktop
             }
 
             if (comprobarExistencia()) {
-                MessageBox.Show("Username already exists");
+                MessageBox.Show("El usuario ya existe");
             }
 
             if (comprobarBlancos()) {
@@ -266,22 +267,22 @@ namespace ViralizeDesktop
             if (txtNombre.Text == "")
             {
                 esBlanco = true;
-                errorBlancos = "Insert a name.";
+                errorBlancos = "Introduce nombre.";
             }
             else if (txtApellidos.Text == "")
             {
                 esBlanco = true;
-                errorBlancos = "Insert Surname";
+                errorBlancos = "Introduce apellido.";
             }
             else if (txtUsuario.Text == "")
             {
                 esBlanco = true;
-                errorBlancos = "Insert username";
+                errorBlancos = "Introduce usuario";
             }
             else if (txtPassword.Text == "")
             {
                 esBlanco = true;
-                errorBlancos = "Insert password";
+                errorBlancos = "Introduce contraseña";
             }
             else {
                 esBlanco = false;

@@ -73,7 +73,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Location = new System.Drawing.Point(12, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 3;
@@ -94,7 +94,7 @@
             this.administradorDataGridViewTextBoxColumn,
             this.superusuarioDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.uSUARIOBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(606, 150);
@@ -180,12 +180,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(16, 188);
+            this.button1.Location = new System.Drawing.Point(16, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 53);
             this.button1.TabIndex = 17;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -198,7 +199,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 53);
             this.button2.TabIndex = 18;
-            this.button2.Text = "Update";
+            this.button2.Text = "Actualizar datos";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -248,9 +249,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(12, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Username:";
+            this.label2.Text = "Usuario:";
             // 
             // txtUsername
             // 
@@ -267,9 +268,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(12, 354);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Password:";
+            this.label3.Text = "Contraseña:";
             // 
             // txtPassword
             // 
@@ -330,11 +331,11 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(587, 5);
+            this.button4.Location = new System.Drawing.Point(597, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.Size = new System.Drawing.Size(85, 38);
             this.button4.TabIndex = 31;
-            this.button4.Text = "Logout";
+            this.button4.Text = "Cerrar sesión";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

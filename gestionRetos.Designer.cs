@@ -59,6 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).BeginInit();
@@ -70,7 +71,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Location = new System.Drawing.Point(12, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 20);
             this.label9.TabIndex = 4;
@@ -188,7 +189,7 @@
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(120, 53);
             this.buttonUpdate.TabIndex = 20;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Actualizar datos";
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -323,13 +324,25 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(659, 5);
+            this.button4.Location = new System.Drawing.Point(659, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.Size = new System.Drawing.Size(85, 40);
             this.button4.TabIndex = 46;
-            this.button4.Text = "Logout";
+            this.button4.Text = "Cerrar sesión";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(554, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Usuarios:";
             // 
             // gestionRetos
             // 
@@ -338,6 +351,7 @@
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(756, 420);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.txtURLVideo);
@@ -399,5 +413,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label6;
     }
 }

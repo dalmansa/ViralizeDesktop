@@ -501,9 +501,9 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Location = new System.Drawing.Point(700, 27);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 24);
+            this.button4.Size = new System.Drawing.Size(85, 34);
             this.button4.TabIndex = 19;
-            this.button4.Text = "Logout";
+            this.button4.Text = "Cerrar sesión";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -515,9 +515,9 @@
             this.txtLogged.ForeColor = System.Drawing.SystemColors.Control;
             this.txtLogged.Location = new System.Drawing.Point(5, 413);
             this.txtLogged.Name = "txtLogged";
-            this.txtLogged.Size = new System.Drawing.Size(63, 20);
+            this.txtLogged.Size = new System.Drawing.Size(158, 20);
             this.txtLogged.TabIndex = 20;
-            this.txtLogged.Text = "Logged";
+            this.txtLogged.Text = "Sesión iniciada como";
             // 
             // Propuestas
             // 
