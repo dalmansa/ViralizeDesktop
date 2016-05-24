@@ -60,6 +60,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet2)).BeginInit();
@@ -277,11 +278,21 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Name = "label6";
             // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackColor = System.Drawing.Color.LightSeaGreen;
+            resources.ApplyResources(this.buttonAtras, "buttonAtras");
+            this.buttonAtras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.UseVisualStyleBackColor = false;
+            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
+            // 
             // gestionRetos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
+            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.listView1);
@@ -343,5 +354,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonAtras;
     }
 }

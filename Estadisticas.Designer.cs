@@ -62,6 +62,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.buttonAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartShares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFechas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -348,13 +349,28 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAtras.Location = new System.Drawing.Point(783, 359);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(120, 53);
+            this.buttonAtras.TabIndex = 33;
+            this.buttonAtras.Text = "Atrás";
+            this.buttonAtras.UseVisualStyleBackColor = false;
+            this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
+            // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(906, 356);
+            this.ClientSize = new System.Drawing.Size(906, 415);
+            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -415,5 +431,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonAtras;
     }
 }

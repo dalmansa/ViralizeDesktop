@@ -222,5 +222,10 @@ namespace ViralizeDesktop
         {
             Application.Exit();
         }
+
+        private void buttonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

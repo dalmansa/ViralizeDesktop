@@ -229,7 +229,17 @@ namespace ViralizeDesktop
 
         private void crearUsuarioButton_Click(object sender, EventArgs e)
         {
-            
+            if (comprobarExistencia())
+            {
+                MessageBox.Show("El usuario ya existe");
+            }
+
+
+            if (comprobarBlancos())
+            {
+                MessageBox.Show(errorBlancos);
+            }
+
             if (comprobarExistencia() == false && comprobarBlancos() == false)
             {
                 USUARIO user = new USUARIO();
@@ -267,13 +277,9 @@ namespace ViralizeDesktop
                 //MessageBox.Show(hash);
             }
 
-            if (comprobarExistencia()) {
-                MessageBox.Show("El usuario ya existe");
-            }
+            
 
-            if (comprobarBlancos()) {
-                MessageBox.Show(errorBlancos);
-            }
+            
 
 
         }
@@ -364,6 +370,11 @@ namespace ViralizeDesktop
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     } 
 }
