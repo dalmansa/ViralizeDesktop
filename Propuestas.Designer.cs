@@ -70,6 +70,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtLogged = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -216,7 +217,7 @@
             this.administracionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(789, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -252,7 +253,7 @@
             this.panelPropuestas.Controls.Add(this.aProp);
             this.panelPropuestas.Location = new System.Drawing.Point(12, 37);
             this.panelPropuestas.Name = "panelPropuestas";
-            this.panelPropuestas.Size = new System.Drawing.Size(859, 497);
+            this.panelPropuestas.Size = new System.Drawing.Size(792, 373);
             this.panelPropuestas.TabIndex = 10;
             // 
             // panelRegistro
@@ -504,13 +505,26 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // txtLogged
+            // 
+            this.txtLogged.AutoSize = true;
+            this.txtLogged.BackColor = System.Drawing.Color.Transparent;
+            this.txtLogged.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogged.ForeColor = System.Drawing.SystemColors.Control;
+            this.txtLogged.Location = new System.Drawing.Point(5, 413);
+            this.txtLogged.Name = "txtLogged";
+            this.txtLogged.Size = new System.Drawing.Size(63, 20);
+            this.txtLogged.TabIndex = 20;
+            this.txtLogged.Text = "Logged";
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(789, 409);
+            this.ClientSize = new System.Drawing.Size(788, 438);
+            this.Controls.Add(this.txtLogged);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.panelRegistro);
@@ -581,5 +595,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label txtLogged;
     }
 }

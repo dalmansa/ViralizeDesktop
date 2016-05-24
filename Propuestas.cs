@@ -20,9 +20,15 @@ namespace ViralizeDesktop
 
     public partial class Propuestas : Form
     {
+
+        private String logged;
+        String userName;
+
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
         string getVideoUrl = "";
         int id;
+
+        String errorBlancos;
 
         String titulo;
         String descripcion;
@@ -31,13 +37,33 @@ namespace ViralizeDesktop
         int usuarioId;
         string hashkey = "ViralizeHashKey";
 
+        public string Logged
+        {
+            get
+            {
+                return logged;
+            }
+
+            set
+            {
+                logged = value;
+            }
+        }
+
         public Propuestas()
         {
             InitializeComponent();
         }
 
+        public Propuestas(string userName)
+        {
+            this.userName = userName;
+        }
+
         private void Propuestas_Load(object sender, EventArgs e)
         {
+            txtLogged.Text = logged;
+            
             // TODO: This line of code loads data into the 'vIRALIZEDataSet.PROPUESTA_RETO' table. You can move, or remove it, as needed.
             this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
 
@@ -181,8 +207,8 @@ namespace ViralizeDesktop
 
         private void crearUsuarioButton_Click(object sender, EventArgs e)
         {
-
-            if (comprobarExistencia() == false)
+            
+            if (comprobarExistencia() == false && comprobarBlancos() == false)
             {
                 USUARIO user = new USUARIO();
 
@@ -218,13 +244,44 @@ namespace ViralizeDesktop
                 MessageBox.Show("Usuario creado");
                 MessageBox.Show(hash);
             }
-            else {
-                MessageBox.Show("Username ya existe");
+
+            if (comprobarExistencia()) {
+                MessageBox.Show("Username already exists");
             }
 
-            
+            if (comprobarBlancos()) {
+                MessageBox.Show(errorBlancos);
+            }
 
 
+        }
+
+        private Boolean comprobarBlancos() {
+            Boolean esBlanco = false;
+            if (txtNombre.Text == "")
+            {
+                esBlanco = true;
+                errorBlancos = "Insert a name.";
+            }
+            else if (txtApellidos.Text == "")
+            {
+                esBlanco = true;
+                errorBlancos = "Insert Surname";
+            }
+            else if (txtUsuario.Text == "")
+            {
+                esBlanco = true;
+                errorBlancos = "Insert username";
+            }
+            else if (txtPassword.Text == "")
+            {
+                esBlanco = true;
+                errorBlancos = "Insert password";
+            }
+            else {
+                esBlanco = false;
+            }
+            return esBlanco;
         }
 
         private Boolean comprobarExistencia()

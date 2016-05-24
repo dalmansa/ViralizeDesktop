@@ -17,7 +17,23 @@ namespace ViralizeDesktop
     {
         string hashkey = "ViralizeHashKey";
 
+        private String usernameIniciated;
+
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
+
+        public string UsernameIniciated
+        {
+            get
+            {
+                return usernameIniciated;
+            }
+
+            set
+            {
+                usernameIniciated = value;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -33,11 +49,20 @@ namespace ViralizeDesktop
                             select c.username).FirstOrDefault();
             if (query != null)
             {
-                Propuestas prop = new Propuestas();
-                prop.ShowDialog();
+                UsernameIniciated = txtUser.Text;
+                using (Propuestas form2 = new Propuestas())
+                {
+                    if (form2.ShowDialog() == DialogResult.OK)
+                    {
+                        form2.Logged = usernameIniciated;
+                    }
+                }
+                //Propuestas prop = new Propuestas();
+                //prop.ShowDialog();
             }
             else
                 MessageBox.Show("Login incorrect");
+
         }
 
 
