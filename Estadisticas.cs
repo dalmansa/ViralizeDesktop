@@ -22,6 +22,10 @@ namespace ViralizeDesktop
 
         private void Estadisticas_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
+
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.GreenYellow;
             // TODO: This line of code loads data into the 'vIRALIZEDataSet3.RETO' table. You can move, or remove it, as needed.
             this.rETOTableAdapter.Fill(this.vIRALIZEDataSet3.RETO);
             cargarChar1();

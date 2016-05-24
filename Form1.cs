@@ -52,10 +52,8 @@ namespace ViralizeDesktop
                 UsernameIniciated = txtUser.Text;
                 using (Propuestas form2 = new Propuestas())
                 {
-                    if (form2.ShowDialog() == DialogResult.OK)
-                    {
-                        form2.Logged = usernameIniciated;
-                    }
+                    form2.Logged = "Logged as: "+usernameIniciated+"(admin)";
+                    form2.ShowDialog();
                 }
                 //Propuestas prop = new Propuestas();
                 //prop.ShowDialog();

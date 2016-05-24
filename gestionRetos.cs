@@ -24,6 +24,10 @@ namespace ViralizeDesktop
 
         private void gestionRetos_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
+
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.GreenYellow;
             // TODO: This line of code loads data into the 'vIRALIZEDataSet2.RETO' table. You can move, or remove it, as needed.
             this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

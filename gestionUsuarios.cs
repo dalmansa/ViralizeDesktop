@@ -24,6 +24,10 @@ namespace ViralizeDesktop
 
         private void gestionUsuarios_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
+
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.GreenYellow;
             // TODO: This line of code loads data into the 'vIRALIZEDataSetUSUARIOS.USUARIO' table. You can move, or remove it, as needed.
             this.uSUARIOTableAdapter1.Fill(this.vIRALIZEDataSetUSUARIOS.USUARIO);
             // TODO: This line of code loads data into the 'vIRALIZEDataSet1.USUARIO' table. You can move, or remove it, as needed.

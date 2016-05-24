@@ -98,6 +98,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -107,6 +108,7 @@
             this.urlVideoDataGridViewTextBoxColumn,
             this.usuarioIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pROPUESTARETOBindingSource;
+            this.dataGridView1.GridColor = System.Drawing.Color.Aquamarine;
             this.dataGridView1.Location = new System.Drawing.Point(17, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -251,7 +253,7 @@
             this.panelPropuestas.Controls.Add(this.axWindowsMediaPlayer1);
             this.panelPropuestas.Controls.Add(this.dataGridView1);
             this.panelPropuestas.Controls.Add(this.aProp);
-            this.panelPropuestas.Location = new System.Drawing.Point(12, 37);
+            this.panelPropuestas.Location = new System.Drawing.Point(3, 34);
             this.panelPropuestas.Name = "panelPropuestas";
             this.panelPropuestas.Size = new System.Drawing.Size(792, 373);
             this.panelPropuestas.TabIndex = 10;
@@ -274,7 +276,7 @@
             this.panelRegistro.Controls.Add(this.label4);
             this.panelRegistro.Controls.Add(this.label3);
             this.panelRegistro.Controls.Add(this.label2);
-            this.panelRegistro.Location = new System.Drawing.Point(15, 27);
+            this.panelRegistro.Location = new System.Drawing.Point(0, 34);
             this.panelRegistro.Name = "panelRegistro";
             this.panelRegistro.Size = new System.Drawing.Size(386, 361);
             this.panelRegistro.TabIndex = 11;
@@ -432,7 +434,7 @@
             this.panelAdmin.Controls.Add(this.button2);
             this.panelAdmin.Controls.Add(this.button1);
             this.panelAdmin.Controls.Add(this.label9);
-            this.panelAdmin.Location = new System.Drawing.Point(0, 27);
+            this.panelAdmin.Location = new System.Drawing.Point(3, 27);
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(694, 306);
             this.panelAdmin.TabIndex = 12;
@@ -523,7 +525,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(788, 438);
+            this.ClientSize = new System.Drawing.Size(788, 439);
             this.Controls.Add(this.txtLogged);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panelAdmin);
