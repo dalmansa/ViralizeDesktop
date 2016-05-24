@@ -372,6 +372,7 @@
   <ItemGroup>
     <None Include="Resources\colorBackground.jpg" />
     <None Include="Resources\ve.gif" />
+    <None Include="Resources\interrogante.png" />
     <Content Include="ve.ico" />
     <Content Include="ViralizeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

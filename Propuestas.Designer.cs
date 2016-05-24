@@ -72,6 +72,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtLogged = new System.Windows.Forms.Label();
             this.buttonAtras = new System.Windows.Forms.Button();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -217,10 +219,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.propuestasToolStripMenuItem,
             this.registroUsuariosToolStripMenuItem,
-            this.administracionToolStripMenuItem});
+            this.administracionToolStripMenuItem,
+            this.ayudaToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(799, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -304,6 +308,7 @@
             this.checkSuper.Size = new System.Drawing.Size(15, 14);
             this.checkSuper.TabIndex = 14;
             this.checkSuper.UseVisualStyleBackColor = true;
+            this.checkSuper.Visible = false;
             // 
             // checkAdmin
             // 
@@ -354,6 +359,7 @@
             this.label8.Size = new System.Drawing.Size(108, 20);
             this.label8.TabIndex = 7;
             this.label8.Text = "Superusuario:";
+            this.label8.Visible = false;
             // 
             // label7
             // 
@@ -435,7 +441,7 @@
             this.panelAdmin.Controls.Add(this.button2);
             this.panelAdmin.Controls.Add(this.button1);
             this.panelAdmin.Controls.Add(this.label9);
-            this.panelAdmin.Location = new System.Drawing.Point(3, 27);
+            this.panelAdmin.Location = new System.Drawing.Point(0, 27);
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(694, 306);
             this.panelAdmin.TabIndex = 12;
@@ -514,7 +520,7 @@
             this.txtLogged.BackColor = System.Drawing.Color.Transparent;
             this.txtLogged.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogged.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtLogged.Location = new System.Drawing.Point(5, 413);
+            this.txtLogged.Location = new System.Drawing.Point(3, 459);
             this.txtLogged.Name = "txtLogged";
             this.txtLogged.Size = new System.Drawing.Size(158, 20);
             this.txtLogged.TabIndex = 20;
@@ -526,7 +532,7 @@
             this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAtras.Location = new System.Drawing.Point(668, 434);
+            this.buttonAtras.Location = new System.Drawing.Point(675, 435);
             this.buttonAtras.Name = "buttonAtras";
             this.buttonAtras.Size = new System.Drawing.Size(120, 53);
             this.buttonAtras.TabIndex = 34;
@@ -534,13 +540,26 @@
             this.buttonAtras.UseVisualStyleBackColor = false;
             this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(788, 488);
+            this.ClientSize = new System.Drawing.Size(799, 490);
             this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.txtLogged);
             this.Controls.Add(this.button4);
@@ -615,5 +634,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label txtLogged;
         private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }

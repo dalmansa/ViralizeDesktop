@@ -37,10 +37,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(591, 382);
+            this.ClientSize = new System.Drawing.Size(725, 420);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AyudaPropuestas";
-            this.Text = "AyudaPropuestas";
+            this.Text = "Ayuda panel principal";
             this.ResumeLayout(false);
 
         }

@@ -73,6 +73,16 @@ namespace ViralizeDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap interrogante {
+            get {
+                object obj = ResourceManager.GetObject("interrogante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ve {
             get {
                 object obj = ResourceManager.GetObject("ve", resourceCulture);
