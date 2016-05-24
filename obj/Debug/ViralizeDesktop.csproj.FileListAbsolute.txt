@@ -55,3 +55,6 @@ C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDes
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.Properties.Resources.resources
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.Propuestas.resources
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.csproj.GenerateResource.Cache
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\af-ZA\ViralizeDesktop.resources.dll
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.gestionRetos.af-ZA.resources
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\af-ZA\ViralizeDesktop.resources.dll

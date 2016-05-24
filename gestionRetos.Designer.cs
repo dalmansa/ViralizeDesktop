@@ -67,15 +67,10 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            resources.ApplyResources(this.label9, "label9");
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(12, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Retos:";
             // 
             // dataGridView1
             // 
@@ -94,74 +89,72 @@
             this.usuarioIDDataGridViewTextBoxColumn,
             this.plataformaIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.rETOBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 43);
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(514, 166);
-            this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tituloDataGridViewTextBoxColumn
             // 
             this.tituloDataGridViewTextBoxColumn.DataPropertyName = "titulo";
-            this.tituloDataGridViewTextBoxColumn.HeaderText = "titulo";
+            resources.ApplyResources(this.tituloDataGridViewTextBoxColumn, "tituloDataGridViewTextBoxColumn");
             this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
             this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            resources.ApplyResources(this.descripcionDataGridViewTextBoxColumn, "descripcionDataGridViewTextBoxColumn");
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaPublicacionDataGridViewTextBoxColumn
             // 
             this.fechaPublicacionDataGridViewTextBoxColumn.DataPropertyName = "fechaPublicacion";
-            this.fechaPublicacionDataGridViewTextBoxColumn.HeaderText = "fechaPublicacion";
+            resources.ApplyResources(this.fechaPublicacionDataGridViewTextBoxColumn, "fechaPublicacionDataGridViewTextBoxColumn");
             this.fechaPublicacionDataGridViewTextBoxColumn.Name = "fechaPublicacionDataGridViewTextBoxColumn";
             this.fechaPublicacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaCaducidadDataGridViewTextBoxColumn
             // 
             this.fechaCaducidadDataGridViewTextBoxColumn.DataPropertyName = "fechaCaducidad";
-            this.fechaCaducidadDataGridViewTextBoxColumn.HeaderText = "fechaCaducidad";
+            resources.ApplyResources(this.fechaCaducidadDataGridViewTextBoxColumn, "fechaCaducidadDataGridViewTextBoxColumn");
             this.fechaCaducidadDataGridViewTextBoxColumn.Name = "fechaCaducidadDataGridViewTextBoxColumn";
             this.fechaCaducidadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // urlVideoDataGridViewTextBoxColumn
             // 
             this.urlVideoDataGridViewTextBoxColumn.DataPropertyName = "urlVideo";
-            this.urlVideoDataGridViewTextBoxColumn.HeaderText = "urlVideo";
+            resources.ApplyResources(this.urlVideoDataGridViewTextBoxColumn, "urlVideoDataGridViewTextBoxColumn");
             this.urlVideoDataGridViewTextBoxColumn.Name = "urlVideoDataGridViewTextBoxColumn";
             this.urlVideoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // activoDataGridViewTextBoxColumn
             // 
             this.activoDataGridViewTextBoxColumn.DataPropertyName = "activo";
-            this.activoDataGridViewTextBoxColumn.HeaderText = "activo";
+            resources.ApplyResources(this.activoDataGridViewTextBoxColumn, "activoDataGridViewTextBoxColumn");
             this.activoDataGridViewTextBoxColumn.Name = "activoDataGridViewTextBoxColumn";
             this.activoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usuarioIDDataGridViewTextBoxColumn
             // 
             this.usuarioIDDataGridViewTextBoxColumn.DataPropertyName = "usuarioID";
-            this.usuarioIDDataGridViewTextBoxColumn.HeaderText = "usuarioID";
+            resources.ApplyResources(this.usuarioIDDataGridViewTextBoxColumn, "usuarioIDDataGridViewTextBoxColumn");
             this.usuarioIDDataGridViewTextBoxColumn.Name = "usuarioIDDataGridViewTextBoxColumn";
             this.usuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // plataformaIDDataGridViewTextBoxColumn
             // 
             this.plataformaIDDataGridViewTextBoxColumn.DataPropertyName = "plataformaID";
-            this.plataformaIDDataGridViewTextBoxColumn.HeaderText = "plataformaID";
+            resources.ApplyResources(this.plataformaIDDataGridViewTextBoxColumn, "plataformaIDDataGridViewTextBoxColumn");
             this.plataformaIDDataGridViewTextBoxColumn.Name = "plataformaIDDataGridViewTextBoxColumn";
             this.plataformaIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -182,175 +175,113 @@
             // buttonUpdate
             // 
             this.buttonUpdate.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.buttonUpdate, "buttonUpdate");
             this.buttonUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonUpdate.Location = new System.Drawing.Point(390, 225);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(120, 53);
-            this.buttonUpdate.TabIndex = 20;
-            this.buttonUpdate.Text = "Actualizar datos";
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkActivo
             // 
-            this.checkActivo.AutoSize = true;
-            this.checkActivo.Location = new System.Drawing.Point(138, 383);
+            resources.ApplyResources(this.checkActivo, "checkActivo");
             this.checkActivo.Name = "checkActivo";
-            this.checkActivo.Size = new System.Drawing.Size(15, 14);
-            this.checkActivo.TabIndex = 40;
             this.checkActivo.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(21, 383);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Activo:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(21, 315);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 20);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Fecha final:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(21, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 20);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Fecha inicio:";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(138, 256);
+            resources.ApplyResources(this.txtDescripcion, "txtDescripcion");
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 34;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(21, 254);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Descripción:";
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(138, 227);
+            resources.ApplyResources(this.txtTitulo, "txtTitulo");
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(100, 20);
-            this.txtTitulo.TabIndex = 32;
             // 
             // nombre
             // 
-            this.nombre.AutoSize = true;
+            resources.ApplyResources(this.nombre, "nombre");
             this.nombre.BackColor = System.Drawing.Color.Transparent;
-            this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.ForeColor = System.Drawing.SystemColors.Control;
-            this.nombre.Location = new System.Drawing.Point(21, 225);
             this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(51, 20);
-            this.nombre.TabIndex = 31;
-            this.nombre.Text = "Titulo:";
             // 
             // dateTimeInicio
             // 
-            this.dateTimeInicio.Location = new System.Drawing.Point(138, 286);
+            resources.ApplyResources(this.dateTimeInicio, "dateTimeInicio");
             this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(100, 20);
-            this.dateTimeInicio.TabIndex = 41;
             // 
             // dateTimeFinal
             // 
-            this.dateTimeFinal.Location = new System.Drawing.Point(138, 312);
+            resources.ApplyResources(this.dateTimeFinal, "dateTimeFinal");
             this.dateTimeFinal.Name = "dateTimeFinal";
-            this.dateTimeFinal.Size = new System.Drawing.Size(100, 20);
-            this.dateTimeFinal.TabIndex = 42;
             // 
             // txtURLVideo
             // 
-            this.txtURLVideo.Location = new System.Drawing.Point(138, 350);
+            resources.ApplyResources(this.txtURLVideo, "txtURLVideo");
             this.txtURLVideo.Name = "txtURLVideo";
-            this.txtURLVideo.Size = new System.Drawing.Size(100, 20);
-            this.txtURLVideo.TabIndex = 44;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(21, 348);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "URL Video:";
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(558, 43);
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(166, 235);
-            this.listView1.TabIndex = 45;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.button4, "button4");
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(659, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 40);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Cerrar sesión";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(554, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "Usuarios:";
             // 
             // gestionRetos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(756, 420);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.listView1);
@@ -370,9 +301,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "gestionRetos";
-            this.Text = "gestionRetos";
             this.Load += new System.EventHandler(this.gestionRetos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rETOBindingSource)).EndInit();

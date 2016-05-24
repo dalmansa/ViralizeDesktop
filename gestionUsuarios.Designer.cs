@@ -276,6 +276,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(129, 356);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 26;
             // 
@@ -366,7 +367,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "gestionUsuarios";
-            this.Text = "gestionUsuarios";
+            this.Text = "Gestión de usuarios";
             this.Load += new System.EventHandler(this.gestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).EndInit();

@@ -64,42 +64,51 @@ namespace ViralizeDesktop
 
         private void cargarChar2Concreto()
         {
-            Boolean esReto = false;
-            DateTime inicio;
-            DateTime final;
-            int count = 0;
-            String dt = "";
-
-            inicio = fechaInicio.Value;
-            final = fechaFin.Value;
-
-            var query = from fe in dataContext.SHAREs
-                        orderby fe.fechaPublicacion
-                        group fe by fe.fechaPublicacion into g
-                        select g;
-            foreach (IGrouping<DateTime, SHARE> studentGroup in query)
+            if (id != 0)
             {
-                count = 0;
-                esReto = false;
-                foreach (SHARE fe in studentGroup)
+                Boolean esReto = false;
+                DateTime inicio;
+                DateTime final;
+                int count = 0;
+                String dt = "";
+
+                inicio = fechaInicio.Value;
+                final = fechaFin.Value;
+
+                var query = from fe in dataContext.SHAREs
+                            orderby fe.fechaPublicacion
+                            group fe by fe.fechaPublicacion into g
+                            select g;
+                foreach (IGrouping<DateTime, SHARE> studentGroup in query)
                 {
-                   // esReto = (fe.retoID == id);
-                    if (fe.retoID == id)
+                    count = 0;
+                    esReto = false;
+                    foreach (SHARE fe in studentGroup)
                     {
-                        
-                        if (Between(fe.fechaPublicacion, inicio, final)) {
-                            esReto = true;
-                            MessageBox.Show(fe.fechaPublicacion.ToString());    
-                            count ++;
-                            dt = fe.fechaPublicacion.ToShortDateString();
+                        // esReto = (fe.retoID == id);
+                        if (fe.retoID == id)
+                        {
+
+                            if (Between(fe.fechaPublicacion, inicio, final))
+                            {
+                                esReto = true;
+                                //MessageBox.Show(fe.fechaPublicacion.ToString());    
+                                count++;
+                                dt = fe.fechaPublicacion.ToShortDateString();
+                            }
                         }
                     }
+                    if (esReto)
+                    {
+                        //MessageBox.Show("ENTRA");
+                        chartFechas.Series["Shares"].Points.AddXY(dt, count);
+                    }
+
                 }
-                if (esReto) {
-                    MessageBox.Show("ENTRA");
-                    chartFechas.Series["Shares"].Points.AddXY(dt, count);
-                }
-               
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un reto de la lista.");
             }
         }
 
@@ -150,7 +159,7 @@ namespace ViralizeDesktop
             }
             else
             {
-                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
+                MessageBox.Show("La fecha de finalización no puede ser anterior o igual a la de inicio.");
             }
             
         }
@@ -160,12 +169,12 @@ namespace ViralizeDesktop
             if (fechaFin.Value > fechaInicio.Value)
             {
                 chartFechas.Series[0].Points.Clear();
-            MessageBox.Show(id.ToString());
+            //MessageBox.Show(id.ToString());
             cargarChar2Concreto();
             }
             else
             {
-                MessageBox.Show("La fecha de finalización no puede ser anterior a la de inicio.");
+                MessageBox.Show("La fecha de finalización no puede ser anterior o igual a la de inicio.");
             }
         }
 

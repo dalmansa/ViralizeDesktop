@@ -113,7 +113,7 @@ namespace ViralizeDesktop
                 getVideoUrl = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
                 id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 CargarVideo(getVideoUrl);
-                MessageBox.Show(getVideoUrl);
+                //MessageBox.Show(getVideoUrl);
             }
         }
 
@@ -148,7 +148,7 @@ namespace ViralizeDesktop
 
                 reto.titulo = titulo;
                 reto.descripcion = descripcion;
-                reto.fechaPublicacion = fechaPublicacion;
+                reto.fechaPublicacion = DateTime.Now.Date;
                 reto.urlVideo = urlVideo;
                 reto.usuarioID = usuarioId;
                 reto.activo = 1;
@@ -264,7 +264,7 @@ namespace ViralizeDesktop
                 dataContext.USUARIOs.Add(user);
                 dataContext.SaveChanges();
                 MessageBox.Show("Usuario creado");
-                MessageBox.Show(hash);
+                //MessageBox.Show(hash);
             }
 
             if (comprobarExistencia()) {

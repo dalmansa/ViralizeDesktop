@@ -377,7 +377,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Estadisticas";
-            this.Text = "Estadisticas";
+            this.Text = "Estadísticas";
             this.Load += new System.EventHandler(this.Estadisticas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartShares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartFechas)).EndInit();
