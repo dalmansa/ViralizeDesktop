@@ -17,6 +17,8 @@ namespace ViralizeDesktop
             InitializeComponent();
         }
 
+        //Al cargar el from de ayuda, introducimos mediante runtime el contenido
+        //de los labels.
         private void AyudaEstadisticas_Load(object sender, EventArgs e)
         {
             label1.Text = ("Aquí puedes ver la cantidad de shares de"
@@ -50,6 +52,7 @@ namespace ViralizeDesktop
                 + "\n" + "haz clic en este botón.");
         }
 
+        //Al pulsar el botón de "Atrás", se cierra esta ventana y te lleva a la anterior.
         private void buttonAtras_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -13,7 +13,9 @@ namespace ViralizeDesktop
 {
     public partial class gestionRetos : Form
     {
+        //Conexión que utilizamos para consultar la base de datos
         public VIRALIZEEntities dataContext = new VIRALIZEEntities();
+        //Variables de control
         int activo;
         int id;
         int usuarioID;
@@ -24,17 +26,21 @@ namespace ViralizeDesktop
 
         private void gestionRetos_Load(object sender, EventArgs e)
         {
+            //Coloreamos el datagridview
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
 
             this.dataGridView1.DefaultCellStyle.BackColor = Color.GreenYellow;
             // TODO: This line of code loads data into the 'vIRALIZEDataSet2.RETO' table. You can move, or remove it, as needed.
             this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
+            //Evitamos que se pueda seleccionar mas de un campo en el datagridview
+            //Si haces clic en un campo se selecciona la fila completa
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
         }
 
-
+        //Metodo de comprobación de espacios en blanco en los campos
+        //Si uno de los campos está en blanco, devolverá un "esblanco=true"
         private Boolean comprobarBlancos()
         {
             Boolean esBlanco = false;
@@ -64,20 +70,25 @@ namespace ViralizeDesktop
         }
 
 
-
+        //Método para actualizar datos del reto
         private void button2_Click(object sender, EventArgs e)
         {
+            //Si hay algún reto seleccionado
             if (id != 0)
             {
+                //Comprobamos que todos los campos estén rellenados
                 if (comprobarBlancos() == false)
                 {
+                    //También comprobamos que la fecha de inicio del reto sea menor a la fecha de finalización
                     if (dateTimeInicio.Value < dateTimeFinal.Value)
                     {
+                        //Si la fecha de finalización es anterior a hoy, desactivamos el reto
                         if (dateTimeFinal.Value < DateTime.Now)
                         {
                             checkActivo.Checked = false;
                             MessageBox.Show("El reto se ha desactivado");
                         }
+                        //Query para actualizar el reto
                         var query = from al in dataContext.RETOes
                                     where al.id == id
                                     select al;
@@ -122,7 +133,7 @@ namespace ViralizeDesktop
 
            
         }
-
+        //Método que rellena los campos del window cada vez que seleccionamos un reto en la lista del datagridview
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             listView1.Items.Clear();
@@ -139,7 +150,7 @@ namespace ViralizeDesktop
                 activo = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[6].Value);
 
 
-
+                //Si ese reto está activo, se marca la casilla
                 if (activo == 1)
                 {
                     checkActivo.Checked = true;
@@ -148,7 +159,7 @@ namespace ViralizeDesktop
                 {
                     checkActivo.Checked = false;
                 }
-
+                //Query para comprobar que usuarios han participado en un share
                 bool paDentro = true;
                 var query = from al in dataContext.SHAREs
                             where al.retoID == id
@@ -158,6 +169,7 @@ namespace ViralizeDesktop
                 {
                     foreach (SHARE a2l in ar)
                     {
+                        //Si el usuario ha hecho mas de un share en ese reto, no se vuelve a mostrar
                         if ((al.id != a2l.id) && (a2l.usuarioID == al.usuarioID))
                         {
                             paDentro = false;
@@ -171,6 +183,7 @@ namespace ViralizeDesktop
                     //MessageBox.Show(al.USUARIO.username);
 
                 }
+                //Por cada usuario que participe en el reto, se añade a la lista
                 foreach (SHARE ac in ar)
                 {
                     listView1.Items.Add(ac.USUARIO.username);
@@ -189,23 +202,23 @@ namespace ViralizeDesktop
         {
 
         }
-
+        //Evento del botón "Cerrar sesión" (se cierra la aplicación)
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        //Evento del botón "Atrás" (volvemos a la pantalla anterior)
         private void buttonAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Abre el menú de ayuda de esta ventana en concreto
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AyudaGRetos aGRetos = new AyudaGRetos();
             aGRetos.ShowDialog();
         }
-
+        //Muestra un pequeño mensaje con la información del programa y los creadores de la aplicación
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Viralize Desktop v1.01 26/05/2016" + "\n"

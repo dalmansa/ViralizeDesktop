@@ -16,7 +16,8 @@ namespace ViralizeDesktop
         {
             InitializeComponent();
         }
-
+        //Al cargar el from de ayuda, introducimos mediante runtime el contenido
+        //de los labels.
         private void AyudaPropuestas_Load(object sender, EventArgs e)
         {
             label1.Text=("Aquí puedes ver los retos propuestos por" 
@@ -38,7 +39,7 @@ namespace ViralizeDesktop
             label5.Text = ("Si deseas cerrar sesión y salir del programa"
                 + "\n" + "haz clic en este botón.");
         }
-
+        //Al pulsar el botón de "Atrás", se cierra esta ventana y te lleva a la anterior.
         private void buttonAtras_Click(object sender, EventArgs e)
         {
             this.Close();

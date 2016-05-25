@@ -16,12 +16,13 @@ namespace ViralizeDesktop
         {
             InitializeComponent();
         }
-
+        //Al pulsar el botón de "Atrás", se cierra esta ventana y te lleva a la anterior.
         private void buttonAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Al cargar el from de ayuda, introducimos mediante runtime el contenido
+        //de los labels.
         private void AyudaGUsuarios_Load(object sender, EventArgs e)
         {
             label1.Text = ("Aquí puedes ver los usuarios registrados"
