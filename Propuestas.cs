@@ -36,7 +36,8 @@ namespace ViralizeDesktop
         String urlVideo;
         int usuarioId;
         string hashkey = "ViralizeHashKey";
-
+        //int de control para la pantalla de ayuda
+        int pantAyuda = 1;
         public string Logged
         {
             get
@@ -213,6 +214,7 @@ namespace ViralizeDesktop
 
         private void propuestasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pantAyuda = 1;
             panelRegistro.Hide();
             panelPropuestas.Show();
             panelAdmin.Hide();
@@ -221,6 +223,7 @@ namespace ViralizeDesktop
 
         private void registroUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             panelPropuestas.Hide();
             panelRegistro.Show();
             panelAdmin.Hide();
@@ -388,6 +391,15 @@ namespace ViralizeDesktop
                 + "\n" + "\n"
                 + "Hecho por : Daniel Almansa, Jairo Pastor, Raúl Jurado y Sergio Sánchez"
                 + "\n");
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pantAyuda == 1)
+            {
+                AyudaPropuestas aProp = new AyudaPropuestas();
+                aProp.ShowDialog();
+            }
         }
     } 
 }
