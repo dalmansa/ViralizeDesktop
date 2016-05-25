@@ -176,6 +176,8 @@ namespace ViralizeDesktop
             {
                 throw ex;
             }
+            //Eliminamos la imagen del disco local ya que no la volveremos a necesitar aqui
+            System.IO.File.Delete("..\\" + nombreImangen);
             //-------------------------------------------------------------------------------------------------------
 
             //Si la ID es diferente de 0 (si hay una propuesta seleccionada), esta se guarda en la base de datos
@@ -218,7 +220,7 @@ namespace ViralizeDesktop
                 this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
 
 
-
+                
 
                 //Y borramos la propuesta
                 rProp.PerformClick();
