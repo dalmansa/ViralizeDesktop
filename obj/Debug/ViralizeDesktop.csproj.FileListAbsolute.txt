@@ -58,3 +58,6 @@ C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDes
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\bin\Debug\af-ZA\ViralizeDesktop.resources.dll
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.gestionRetos.af-ZA.resources
 C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\af-ZA\ViralizeDesktop.resources.dll
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.AyudaGRetos.resources
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.AyudaGUsuarios.resources
+C:\Users\Raúl\Documents\Visual Studio 2015\Projects\ViralizeDesktop\ViralizeDesktop\obj\Debug\ViralizeDesktop.AyudaEstadisticas.resources

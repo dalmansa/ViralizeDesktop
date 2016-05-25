@@ -66,6 +66,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AyudaEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaEstadisticas.Designer.cs">
+      <DependentUpon>AyudaEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AyudaGRetos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaGRetos.Designer.cs">
+      <DependentUpon>AyudaGRetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AyudaGUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyudaGUsuarios.Designer.cs">
+      <DependentUpon>AyudaGUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="AyudaPropuestas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +277,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ViralizeModel.edmx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AyudaEstadisticas.resx">
+      <DependentUpon>AyudaEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyudaGRetos.resx">
+      <DependentUpon>AyudaGRetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyudaGUsuarios.resx">
+      <DependentUpon>AyudaGUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AyudaPropuestas.resx">
       <DependentUpon>AyudaPropuestas.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +403,11 @@
     <None Include="Resources\ayuda1.png" />
     <None Include="Resources\ayuda11.png" />
     <None Include="Resources\ayuda111.png" />
+    <None Include="Resources\ayuda12.png" />
+    <None Include="Resources\ayuda13.png" />
+    <None Include="Resources\ayuda121.png" />
+    <None Include="Resources\ayuda14.png" />
+    <None Include="Resources\ayuda141.png" />
     <Content Include="ve.ico" />
     <Content Include="ViralizeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

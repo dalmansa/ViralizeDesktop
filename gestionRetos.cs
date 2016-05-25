@@ -199,5 +199,19 @@ namespace ViralizeDesktop
         {
             this.Close();
         }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AyudaGRetos aGRetos = new AyudaGRetos();
+            aGRetos.ShowDialog();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Viralize Desktop v1.01 26/05/2016" + "\n"
+                + "\n" + "\n"
+                + "Hecho por : Daniel Almansa, Jairo Pastor, Raúl Jurado y Sergio Sánchez"
+                + "\n");
+        }
     }
 }

@@ -126,7 +126,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 20</value>
+    <value>12, 45</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -148,30 +148,6 @@
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>18</value>
-  </data>
-  <metadata name="rETOBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 17</value>
-  </metadata>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 43</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 166</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>17</value>
   </data>
   <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>id</value>
@@ -206,9 +182,27 @@
   <metadata name="vIRALIZEDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="vIRALIZEDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 68</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>514, 166</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
   <metadata name="rETOTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>322, 17</value>
   </metadata>
@@ -220,7 +214,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="buttonUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 225</value>
+    <value>390, 250</value>
   </data>
   <data name="buttonUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 53</value>
@@ -247,7 +241,7 @@
     <value>True</value>
   </data>
   <data name="checkActivo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 383</value>
+    <value>138, 408</value>
   </data>
   <data name="checkActivo.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -274,7 +268,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 383</value>
+    <value>21, 408</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -304,7 +298,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 315</value>
+    <value>21, 340</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -334,7 +328,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 286</value>
+    <value>21, 311</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
@@ -358,7 +352,7 @@
     <value>11</value>
   </data>
   <data name="txtDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 256</value>
+    <value>138, 281</value>
   </data>
   <data name="txtDescripcion.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -385,7 +379,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 254</value>
+    <value>21, 279</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 20</value>
@@ -409,7 +403,7 @@
     <value>13</value>
   </data>
   <data name="txtTitulo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 227</value>
+    <value>138, 252</value>
   </data>
   <data name="txtTitulo.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -436,7 +430,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="nombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 225</value>
+    <value>21, 250</value>
   </data>
   <data name="nombre.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
@@ -460,7 +454,7 @@
     <value>15</value>
   </data>
   <data name="dateTimeInicio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 286</value>
+    <value>138, 311</value>
   </data>
   <data name="dateTimeInicio.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -481,7 +475,7 @@
     <value>7</value>
   </data>
   <data name="dateTimeFinal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 312</value>
+    <value>138, 337</value>
   </data>
   <data name="dateTimeFinal.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -502,7 +496,7 @@
     <value>6</value>
   </data>
   <data name="txtURLVideo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 350</value>
+    <value>138, 375</value>
   </data>
   <data name="txtURLVideo.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -529,7 +523,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 348</value>
+    <value>21, 373</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -553,7 +547,7 @@
     <value>5</value>
   </data>
   <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>558, 43</value>
+    <value>558, 68</value>
   </data>
   <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 235</value>
@@ -580,7 +574,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 0</value>
+    <value>671, 27</value>
   </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 40</value>
@@ -610,7 +604,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 20</value>
+    <value>554, 45</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 20</value>
@@ -640,7 +634,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="buttonAtras.Location" type="System.Drawing.Point, System.Drawing">
-    <value>636, 368</value>
+    <value>636, 393</value>
   </data>
   <data name="buttonAtras.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 53</value>
@@ -663,6 +657,45 @@
   <data name="&gt;&gt;buttonAtras.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>473, 17</value>
+  </metadata>
+  <data name="ayudaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="ayudaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="acercaDeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="acercaDeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Acerca de...</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>759, 24</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -673,7 +706,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>756, 420</value>
+    <value>759, 448</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -838,6 +871,18 @@
   </data>
   <data name="&gt;&gt;rETOTableAdapter.Type" xml:space="preserve">
     <value>ViralizeDesktop.VIRALIZEDataSet2TableAdapters.RETOTableAdapter, VIRALIZEDataSet2.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ayudaToolStripMenuItem.Name" xml:space="preserve">
+    <value>ayudaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ayudaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;acercaDeToolStripMenuItem.Name" xml:space="preserve">
+    <value>acercaDeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;acercaDeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>gestionRetos</value>
