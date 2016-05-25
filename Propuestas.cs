@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
 using NReco.VideoConverter;
+using System.Net;
+using System.IO;
 
 namespace ViralizeDesktop
 {
@@ -122,9 +124,62 @@ namespace ViralizeDesktop
         {
 
         }
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
 
         private void aProp_Click(object sender, EventArgs e)
         {
+            //-------------------------------------------------------------------------------------------------------
+
+            string nombreImangen = RandomString(6) + ".jpg";
+            var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+            ffMpeg.GetVideoThumbnail(getVideoUrl, "C:\\Users\\Daniel\\Pictures\\" + nombreImangen, 1);
+
+
+            //System.Net.WebClient Client = new System.Net.WebClient();
+
+            //Client.Headers.Add("Content-Type", "binary/octet-stream");
+
+            //byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
+            //                                  @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
+
+            //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+
+            String sourcefilepath = "C:\\Users\\Daniel\\Pictures\\" + nombreImangen; // e.g. “d:/test.docx”
+            String ftpurl = "ftp://31.220.16.148/viralfotos/" + nombreImangen; // e.g. ftp://serverip/foldername/foldername
+            String ftpusername = "u393771917"; // e.g. username
+            String ftppassword = "viralize"; // e.g. password
+
+            try
+            {
+                string filename = Path.GetFileName(sourcefilepath);
+                string ftpfullpath = ftpurl;
+                FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create(ftpfullpath);
+                ftp.Credentials = new NetworkCredential(ftpusername, ftppassword);
+
+                ftp.KeepAlive = true;
+                ftp.UseBinary = true;
+                ftp.Method = WebRequestMethods.Ftp.UploadFile;
+
+                FileStream fs = File.OpenRead(sourcefilepath);
+                byte[] buffer = new byte[fs.Length];
+                fs.Read(buffer, 0, buffer.Length);
+                fs.Close();
+
+                Stream ftpstream = ftp.GetRequestStream();
+                ftpstream.Write(buffer, 0, buffer.Length);
+                ftpstream.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            //-------------------------------------------------------------------------------------------------------
 
 
             if (id != 0)
@@ -154,7 +209,7 @@ namespace ViralizeDesktop
                 reto.usuarioID = usuarioId;
                 reto.activo = 1;
                 reto.plataformaID = 1;
-
+                reto.urlThumbnail = "http://vreality.es/viralfotos/" + nombreImangen;
                 reto.fechaCaducidad = DateTime.Now.AddDays(31);
 
                 dataContext.RETOes.Add(reto);
@@ -162,18 +217,10 @@ namespace ViralizeDesktop
                 MessageBox.Show("Accepted");
                 this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
                 this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
-                //var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-                //ffMpeg.GetVideoThumbnail(urlVideo, "C:\\Users\\Daniel\\Pictures\\imagenEEE.jpg", 1);
 
 
-                //System.Net.WebClient Client = new System.Net.WebClient();
 
-                //Client.Headers.Add("Content-Type", "binary/octet-stream");
 
-                //byte[] result = Client.UploadFile("http://vreality.es/upload.php", "POST",
-                //                                  @"C:\\Users\\Daniel\\Pictures\\imagenEE.jpg");
-
-                //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
 
                 rProp.PerformClick();
             }
