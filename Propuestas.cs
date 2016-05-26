@@ -135,96 +135,101 @@ namespace ViralizeDesktop
         //Evento del botón de "Aceptar propuesta"
         private void aProp_Click(object sender, EventArgs e)
         {
-            //-------------------------------------------------------------------------------------------------------
-            //Generamos el nombre del archivo llamando al método y añadimos la extensión .jpg
-            string nombreImangen = RandomString(6) + ".jpg";
-            //Generamos el thumbnail en el directorio actual
-            var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-            ffMpeg.GetVideoThumbnail(getVideoUrl, "..\\" + nombreImangen, 1);
-
-            
-            //Subimos el thumbnail
-            //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
-            String sourcefilepath = "..\\" + nombreImangen; // e.g. “d:/test.docx”
-            //String sourcefilepath = "C:\\Users\\Daniel\\Pictures\\" + nombreImangen; // e.g. “d:/test.docx”
-            //Introducimos URL de ftp y el nombre de la imagen, identificador, contraseña...
-            String ftpurl = "ftp://31.220.16.148/viralfotos/" + nombreImangen; // e.g. ftp://serverip/foldername/foldername
-            String ftpusername = "u393771917"; // e.g. username
-            String ftppassword = "viralize"; // e.g. password
-            //Proceso de subida del archivo
-            try
-            {
-                string filename = Path.GetFileName(sourcefilepath);
-                string ftpfullpath = ftpurl;
-                FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create(ftpfullpath);
-                ftp.Credentials = new NetworkCredential(ftpusername, ftppassword);
-
-                ftp.KeepAlive = true;
-                ftp.UseBinary = true;
-                ftp.Method = WebRequestMethods.Ftp.UploadFile;
-
-                FileStream fs = File.OpenRead(sourcefilepath);
-                byte[] buffer = new byte[fs.Length];
-                fs.Read(buffer, 0, buffer.Length);
-                fs.Close();
-
-                Stream ftpstream = ftp.GetRequestStream();
-                ftpstream.Write(buffer, 0, buffer.Length);
-                ftpstream.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            //Eliminamos la imagen del disco local ya que no la volveremos a necesitar aqui
-            System.IO.File.Delete("..\\" + nombreImangen);
-            //-------------------------------------------------------------------------------------------------------
-
-            //Si la ID es diferente de 0 (si hay una propuesta seleccionada), esta se guarda en la base de datos
-            if (id != 0)
-            {
-                var query =
-                from al in dataContext.PROPUESTA_RETO
-                where al.id == id
-                select al;
-
-                foreach (var al in query)
-                {
-                    titulo = al.titulo;
-                    descripcion = al.descripcion;
-                    fechaPublicacion = al.fechaPublicacion;
-                    urlVideo = al.urlVideo;
-                    usuarioId = al.usuarioID;
-
-                }
+            if (id != 0) {
+                    //-------------------------------------------------------------------------------------------------------
+                    //Generamos el nombre del archivo llamando al método y añadimos la extensión .jpg
+                    string nombreImangen = RandomString(6) + ".jpg";
+                    //Generamos el thumbnail en el directorio actual
+                    var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+                    ffMpeg.GetVideoThumbnail(getVideoUrl, "..\\" + nombreImangen, 1);
 
 
-                RETO reto = new RETO();
+                    //Subimos el thumbnail
+                    //string s = System.Text.Encoding.UTF8.GetString(result, 0, result.Length);
+                    String sourcefilepath = "..\\" + nombreImangen; // e.g. “d:/test.docx”
+                                                                    //String sourcefilepath = "C:\\Users\\Daniel\\Pictures\\" + nombreImangen; // e.g. “d:/test.docx”
+                                                                    //Introducimos URL de ftp y el nombre de la imagen, identificador, contraseña...
+                    String ftpurl = "ftp://31.220.16.148/viralfotos/" + nombreImangen; // e.g. ftp://serverip/foldername/foldername
+                    String ftpusername = "u393771917"; // e.g. username
+                    String ftppassword = "viralize"; // e.g. password
+                                                     //Proceso de subida del archivo
+                    try
+                    {
+                        string filename = Path.GetFileName(sourcefilepath);
+                        string ftpfullpath = ftpurl;
+                        FtpWebRequest ftp = (FtpWebRequest)FtpWebRequest.Create(ftpfullpath);
+                        ftp.Credentials = new NetworkCredential(ftpusername, ftppassword);
 
-                reto.titulo = titulo;
-                reto.descripcion = descripcion;
-                reto.fechaPublicacion = DateTime.Now.Date;
-                reto.urlVideo = urlVideo;
-                reto.usuarioID = usuarioId;
-                reto.activo = 1;
-                reto.plataformaID = 1;
-                reto.urlThumbnail = "http://vreality.es/viralfotos/" + nombreImangen;
-                reto.fechaCaducidad = DateTime.Now.AddDays(31);
+                        ftp.KeepAlive = true;
+                        ftp.UseBinary = true;
+                        ftp.Method = WebRequestMethods.Ftp.UploadFile;
 
-                dataContext.RETOes.Add(reto);
-                //Se guardan los cambios en la base de datos
-                dataContext.SaveChanges();
-                MessageBox.Show("Accepted");
-                //Se rellena los campos del datagridview con la información actual
-                this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
-                this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
+                        FileStream fs = File.OpenRead(sourcefilepath);
+                        byte[] buffer = new byte[fs.Length];
+                        fs.Read(buffer, 0, buffer.Length);
+                        fs.Close();
+
+                        Stream ftpstream = ftp.GetRequestStream();
+                        ftpstream.Write(buffer, 0, buffer.Length);
+                        ftpstream.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    //Eliminamos la imagen del disco local ya que no la volveremos a necesitar aqui
+                    System.IO.File.Delete("..\\" + nombreImangen);
+                    //-------------------------------------------------------------------------------------------------------
+
+                    //Si la ID es diferente de 0 (si hay una propuesta seleccionada), esta se guarda en la base de datos
+                    if (id != 0)
+                    {
+                        var query =
+                        from al in dataContext.PROPUESTA_RETO
+                        where al.id == id
+                        select al;
+
+                        foreach (var al in query)
+                        {
+                            titulo = al.titulo;
+                            descripcion = al.descripcion;
+                            fechaPublicacion = al.fechaPublicacion;
+                            urlVideo = al.urlVideo;
+                            usuarioId = al.usuarioID;
+
+                        }
 
 
-                
+                        RETO reto = new RETO();
 
-                //Y borramos la propuesta
-                rProp.PerformClick();
-            }
+                        reto.titulo = titulo;
+                        reto.descripcion = descripcion;
+                        reto.fechaPublicacion = DateTime.Now.Date;
+                        reto.urlVideo = urlVideo;
+                        reto.usuarioID = usuarioId;
+                        reto.activo = 1;
+                        reto.plataformaID = 1;
+                        reto.urlThumbnail = "http://vreality.es/viralfotos/" + nombreImangen;
+                        reto.fechaCaducidad = DateTime.Now.AddDays(31);
+
+                        dataContext.RETOes.Add(reto);
+                        //Se guardan los cambios en la base de datos
+                        dataContext.SaveChanges();
+                        MessageBox.Show("Accepted");
+                        //Se rellena los campos del datagridview con la información actual
+                        this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+                        this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
+
+
+
+
+                        //Y borramos la propuesta
+                        rProp.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debes seleccionar una propuesta a aceptar previamente.");
+                    } }
             else
             {
                 MessageBox.Show("Debes seleccionar una propuesta a aceptar previamente.");

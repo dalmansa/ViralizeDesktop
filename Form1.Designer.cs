@@ -82,7 +82,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 3;
-            this.txtUser.Text = "Pmendoza";
             // 
             // txtPass
             // 
@@ -91,7 +90,6 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 4;
-            this.txtPass.Text = "pepe";
             // 
             // pictureBox1
             // 
@@ -119,6 +117,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Inicio de sesión";
             this.Load += new System.EventHandler(this.Form1_Load);

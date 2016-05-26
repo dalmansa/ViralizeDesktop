@@ -338,6 +338,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "gestionRetos";
             this.Load += new System.EventHandler(this.gestionRetos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

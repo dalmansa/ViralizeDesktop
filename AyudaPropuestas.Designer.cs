@@ -208,6 +208,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AyudaPropuestas";
             this.Text = "Ayuda panel principal";
             this.Load += new System.EventHandler(this.AyudaPropuestas_Load);

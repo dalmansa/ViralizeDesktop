@@ -423,6 +423,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Estadisticas";
             this.Text = "Estadísticas";
             this.Load += new System.EventHandler(this.Estadisticas_Load);
