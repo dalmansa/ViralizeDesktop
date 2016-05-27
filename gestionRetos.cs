@@ -226,5 +226,11 @@ namespace ViralizeDesktop
                 + "Hecho por : Daniel Almansa, Jairo Pastor, Raúl Jurado y Sergio Sánchez"
                 + "\n");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.rETOTableAdapter.Update(this.vIRALIZEDataSet2.RETO);
+            this.rETOTableAdapter.Fill(this.vIRALIZEDataSet2.RETO);
+        }
     }
 }

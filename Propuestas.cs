@@ -215,7 +215,7 @@ namespace ViralizeDesktop
                         dataContext.RETOes.Add(reto);
                         //Se guardan los cambios en la base de datos
                         dataContext.SaveChanges();
-                        MessageBox.Show("Accepted");
+                        MessageBox.Show("Propuesta aceptada.");
                         //Se rellena los campos del datagridview con la información actual
                         this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
                         this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
@@ -455,6 +455,12 @@ namespace ViralizeDesktop
                 AyudaPropuestas aProp = new AyudaPropuestas();
                 aProp.ShowDialog();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.pROPUESTA_RETOTableAdapter.Update(this.vIRALIZEDataSet.PROPUESTA_RETO);
+            this.pROPUESTA_RETOTableAdapter.Fill(this.vIRALIZEDataSet.PROPUESTA_RETO);
         }
     } 
 }

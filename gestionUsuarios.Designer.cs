@@ -64,6 +64,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSetUSUARIOS)).BeginInit();
@@ -385,6 +386,21 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button5.Location = new System.Drawing.Point(543, 228);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(79, 23);
+            this.button5.TabIndex = 51;
+            this.button5.Text = "Actualizar";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // gestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +408,7 @@
             this.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 519);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkSuper);
@@ -466,5 +483,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
     }
 }

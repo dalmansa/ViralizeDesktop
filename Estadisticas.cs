@@ -294,5 +294,10 @@ namespace ViralizeDesktop
             AyudaEstadisticas aEstad = new AyudaEstadisticas();
             aEstad.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

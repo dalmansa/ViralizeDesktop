@@ -74,6 +74,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtLogged = new System.Windows.Forms.Label();
             this.buttonAtras = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROPUESTARETOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vIRALIZEDataSet)).BeginInit();
@@ -267,6 +268,7 @@
             // 
             this.panelPropuestas.BackgroundImage = global::ViralizeDesktop.Properties.Resources.colorBackground;
             this.panelPropuestas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPropuestas.Controls.Add(this.button5);
             this.panelPropuestas.Controls.Add(this.label1);
             this.panelPropuestas.Controls.Add(this.rProp);
             this.panelPropuestas.Controls.Add(this.axWindowsMediaPlayer1);
@@ -554,6 +556,20 @@
             this.buttonAtras.UseVisualStyleBackColor = false;
             this.buttonAtras.Click += new System.EventHandler(this.buttonAtras_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5.Location = new System.Drawing.Point(395, 305);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(79, 23);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Actualizar";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Propuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,5 +654,6 @@
         private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
     }
 }
